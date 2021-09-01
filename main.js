@@ -20,6 +20,8 @@ client.on("ready", () => {
 })
 
 client.on("message", msg => {
+  if (msg.channel.type === "dm") return
+
   if (msg.content === "arakami") {
     msg.channel.send("Người sẽ không bao giờ roll ra botan!")
   }
@@ -35,8 +37,9 @@ client.on("message", msg => {
 })
 
 client.on("message", msg => {
-  if (msg.author.bot) return;
-  if (!msg.content.startsWith(prefix)) return;
+  if (msg.author.bot) return
+  if (msg.channel.type === "dm") return
+  if (!msg.content.startsWith(prefix)) return
 
   if (msg.content === `${prefix}prefix`) {
     msg.channel.send("My prefix is " + prefix)
@@ -52,8 +55,13 @@ client.on("message", msg => {
           fields: [
             {
               name: "~help",
-              value: "You just used it to show this menu! 🤣👉",
+              value: "You just used it to show this menu! 🤣",
               inline: true
+            },
+            {
+              name: "~prefix",
+              value: "Display the Bot's prefix.",
+              inline: false
             }
           ]
         }),
@@ -61,7 +69,7 @@ client.on("message", msg => {
           '⬅️': async () => {
               let res = await msg.channel.send("Hey-")
               setTimeout(() => {
-                return res.edit("there's nothing there...")
+                return res.edit("there's nothing there..")
               }, 1000)
           },
           '➡️': "funnycommand"
@@ -86,4 +94,11 @@ client.on("message", msg => {
   }
 })
 
+client.on("message", msg => {
+  if (msg.author.bot) return false
+  if (msg.content.includes("@here") || msg.content.includes("@everyone")) return false
+  if (msg.mentions.has(client.user.id)) {
+    msg.channel.send(`Hello? If you're looking for my prefix then its ${prefix}!`)
+  }
+})
 client.login(process.env.BOT_TOKEN)

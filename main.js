@@ -34,6 +34,31 @@ client.on("message", msg => {
     msg.channel.send("Là chồng của tui ❤️~")
   }
 
+  if (msg.content === "uk rs") {
+    msg.channel.send(":flag_gb: :flag_ru:")
+  }
+
+  if (msg.content === "coldgreeneyes") {
+    msg.channel.send("Everchanging")
+    setTimeout(() => {   
+      msg.channel.send("The knowing feeling")
+    },2000);
+    setTimeout(() => {
+      msg.channel.send("Could make you fall from the dreamy skies")
+    },3000);
+    setTimeout(() => {
+      msg.channel.send("Suddenly the deepness can get true")
+    },4000);
+    setTimeout(() => {
+      msg.channel.send("Realize I fall along with you")
+    },5000);
+    setTimeout(() => {
+      msg.channel.send("And you're looking into calm green eyes")
+    },7000);
+    setTimeout(() => {
+      msg.channel.send("AWOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
+    },8000);
+  }
 })
 
 client.on("message", msg => {
@@ -79,7 +104,14 @@ client.on("message", msg => {
         name: "funnycommand",
         content: new MessageEmbed({
           title: "Funny Commands",
-          description: "Comming soon~"
+          description: "List of funny commands",
+          fields: [
+            {
+              name: "~discordgift",
+              value: "Free 1 Year of Nitro 😱😱😱",
+              inline: false
+            }
+          ]
         }),
         reactions: {
           '⬅️': "main",
@@ -92,7 +124,14 @@ client.on("message", msg => {
       destination.content.title = "Hey, " + msg.author.username
     })
   }
+
+  if (msg.content === `${prefix}discordgift`){
+    msg.channel.send("https://discordgift.site/pqM7dUWuL8TR9OWF")
+   setTimeout(function () {msg.channel.send("https://cdn.discordapp.com/emojis/880989337913815061.png?v=1")
+   },2500)
+  }
 })
+
 
 client.on("message", msg => {
   if (msg.author.bot) return false

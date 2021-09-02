@@ -31,10 +31,6 @@ client.on("message", msg => {
     msg.channel.send("Suki Suki Daisuki")
   }
 
-  if (msg.content === "botan shrimp") {
-    msg.channel.send("Là chồng của tui ❤️~")
-  }
-
   if (msg.content === "uk rs") {
     msg.channel.send(":flag_gb: :flag_ru:")
   }
@@ -56,25 +52,27 @@ client.on("message", msg => {
   }
 
   if (msg.content === "coldgreeneyes") {
+    setTimeout(() => {
     msg.channel.send("Everchanging")
+    },500);
     setTimeout(() => {   
       msg.channel.send("The knowing feeling")
     },2000);
     setTimeout(() => {
       msg.channel.send("Could make you fall from the dreamy skies")
-    },3000);
-    setTimeout(() => {
-      msg.channel.send("Suddenly the deepness can get true")
     },4000);
     setTimeout(() => {
+      msg.channel.send("Suddenly the deepness can get true")
+    },6000);
+    setTimeout(() => {
       msg.channel.send("Realize I fall along with you")
-    },5000);
+    },8000);
     setTimeout(() => {
       msg.channel.send("And you're looking into calm green eyes")
-    },7000);
+    },10000);
     setTimeout(() => {
       msg.channel.send("AWOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
-    },8000);
+    },12000);
   }
 })
 

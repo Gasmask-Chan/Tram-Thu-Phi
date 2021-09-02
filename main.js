@@ -6,7 +6,7 @@ const client = new Discord.Client()
 const ytdl = require("ytdl-core")
 const queue = new Map()
 const { Menu } = require('discord.js-menu')
-
+const i = 1
 prefix = "~"
 
 client.on("ready", () => {
@@ -38,6 +38,18 @@ client.on("message", msg => {
     msg.channel.send(":flag_gb: :flag_ru:")
   }
 
+  if (msg.content === "nguyet") {
+    msg.channel.send("月")
+  }
+
+  if (msg.content.includes("ngu")) {
+    msg.react("👍")
+  }
+
+  if (msg.content.includes("727") || (msg.content.includes("wysi"))) {
+    msg.channel.send("https://cdn.discordapp.com/emojis/810843992346460191.gif?v=1")
+  }
+  
   if (msg.content === "coldgreeneyes") {
     msg.channel.send("Everchanging")
     setTimeout(() => {   
@@ -91,12 +103,7 @@ client.on("message", msg => {
           ]
         }),
         reactions: {
-          '⬅️': async () => {
-              let res = await msg.channel.send("Hey-")
-              setTimeout(() => {
-                return res.edit("there's nothing there..")
-              }, 1000)
-          },
+          '⬅️': "information",
           '➡️': "funnycommand"
         }
       },
@@ -115,7 +122,30 @@ client.on("message", msg => {
         }),
         reactions: {
           '⬅️': "main",
-          '❌': "delete",
+          '➡️': "information",
+        }
+      },
+      {
+        name: "information",
+        content: new MessageEmbed({
+          title: "Developers",
+          description: "List of Developers",
+          fields: [
+            {
+              name: "GasmaskChan",
+              value: "The founder",
+              inline: false
+            },
+            {
+              name: "NHaiAnh07",
+              value: "https://bit.ly/NHaiAnh07pf",
+              inline: true
+            }
+          ]
+        }),
+        reactions: {
+          '⬅️': "funnycomnmand",
+          '➡️': "main"
         }
       }
     ], 300000)
@@ -132,7 +162,6 @@ client.on("message", msg => {
   }
 })
 
-
 client.on("message", msg => {
   if (msg.author.bot) return false
   if (msg.content.includes("@here") || msg.content.includes("@everyone")) return false
@@ -140,4 +169,5 @@ client.on("message", msg => {
     msg.channel.send(`Hello? If you're looking for my prefix then its ${prefix}!`)
   }
 })
+
 client.login(process.env.BOT_TOKEN)

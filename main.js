@@ -5,9 +5,10 @@ const { MessageEmbed } = require("discord.js")
 const client = new Discord.Client()
 const ytdl = require("ytdl-core")
 const queue = new Map()
-const { Menu } = require('discord.js-menu')
-const i = 1
+const { Menu } = require('discord.js-menu') //npm i discord.js-menu
+const { DiscordTogether } = require("discord-together") // npm i discord-together
 prefix = "~"
+client.discordTogether = new DiscordTogether(client)
 
 client.on("ready", () => {
   console.log("The bot is ready, LETS GOOOOOOOOOOO!")
@@ -50,6 +51,10 @@ client.on("message", msg => {
     msg.channel.send("https://cdn.discordapp.com/emojis/810843992346460191.gif?v=1")
   }
   
+  if (msg.content.includes("fc")) {
+    msg.channel.send("https://cdn.discordapp.com/attachments/661857321579970581/882816415235706900/FB_IMG_16228065492074030.jpg")
+  }
+
   if (msg.content === "coldgreeneyes") {
     msg.channel.send("Everchanging")
     setTimeout(() => {   
@@ -104,7 +109,7 @@ client.on("message", msg => {
         }),
         reactions: {
           '⬅️': "information",
-          '➡️': "funnycommand"
+          '➡️': "funnycommand",
         }
       },
       {
@@ -122,6 +127,44 @@ client.on("message", msg => {
         }),
         reactions: {
           '⬅️': "main",
+          '➡️': "arcadecommand",
+        }
+      },
+      {
+        name: "arcadecommand",
+        content: new MessageEmbed({
+          title: "Arcade Commands",
+          description: "Lets play!!",
+          fields: [
+            {
+              name: "~startyt",
+              value: "Watching Youtube together.",
+              inline: false
+            },
+            {
+              name: "~startpoker",
+              value: "Play Poker",
+              inline: false
+            },
+            {
+             name: "~startchess",
+             value: "Play Chess",
+             inline: false 
+            },
+            {
+              name: "~startbetrayal",
+              value: "Play Betrayal.io",
+              inline: false
+            },
+            {
+              name: "~startfishing",
+              value: "Catch fish ",
+              inline: true
+            }
+          ]
+        }),
+        reactions: {
+          '⬅️': "funnycommand",
           '➡️': "information",
         }
       },
@@ -144,8 +187,8 @@ client.on("message", msg => {
           ]
         }),
         reactions: {
-          '⬅️': "funnycomnmand",
-          '➡️': "main"
+          '⬅': "arcadecommand",
+          '➡️': "main",
         }
       }
     ], 300000)
@@ -159,6 +202,46 @@ client.on("message", msg => {
     msg.channel.send("https://discordgift.site/pqM7dUWuL8TR9OWF")
    setTimeout(function () {msg.channel.send("https://cdn.discordapp.com/emojis/880989337913815061.png?v=1")
    },2500)
+  }
+
+  if (msg.content === `${prefix}startyt`) {
+    if (msg.member.voice.channel) {
+      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'youtube').then(async invite => {
+        return msg.channel.send(`Please CLIKC ON THIS LINK to join: ${invite.code}`)
+      })
+    }
+  }
+
+  if (msg.content === `${prefix}startpoker`) {
+    if (msg.member.voice.channel) {
+      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'poker').then(async invite => {
+        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
+      })
+    }
+  }
+
+  if (msg.content === `${prefix}startchess`) {
+    if (msg.member.voice.channel) {
+      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'chess').then(async invite => {
+        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
+      })
+    }
+  }
+
+  if (msg.content === `${prefix}startbetrayal`) {
+    if (msg.member.voice.channel) {
+      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'betrayal').then(async invite => {
+        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
+      })
+    }
+  }
+
+  if (msg.content === `${prefix}startfishing`) {
+    if (msg.member.voice.channel) {
+      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'fishing').then(async invite => {
+        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
+      })
+    }
   }
 })
 

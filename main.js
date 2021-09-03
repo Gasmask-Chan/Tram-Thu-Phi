@@ -35,11 +35,12 @@ client.on("message", msg => {
     msg.channel.send(":flag_gb: :flag_ru:")
   }
 
-  if (msg.content === "nguyet") {
+  if (msg.content === "nguyet" || msg.content === "nguyệt") {
     msg.channel.send("月")
   }
 
   if (msg.content.includes("ngu")) {
+    if (msg.content === "nguyet" || msg.content === "nguyệt") return
     msg.react("👍")
   }
 
@@ -51,6 +52,14 @@ client.on("message", msg => {
     msg.channel.send("https://cdn.discordapp.com/attachments/661857321579970581/882816415235706900/FB_IMG_16228065492074030.jpg")
   }
 
+  if (msg.content.includes("horny") || (msg.content.includes("hỏny"))) {
+    msg.react("<a:koronebonkhorny:879355729046298716>")
+  }
+
+  if (msg.content.includes("chôn") || (msg.content.includes("chon") || (msg.content.includes("troll")))) {
+    msg.react("<:chon:883178837758865418>")
+  }
+  
   if (msg.content === "coldgreeneyes") {
     setTimeout(() => {
     msg.channel.send("Everchanging")

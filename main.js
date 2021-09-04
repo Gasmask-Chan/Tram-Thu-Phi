@@ -5,8 +5,8 @@ const { MessageEmbed } = require("discord.js")
 const client = new Discord.Client()
 const ytdl = require("ytdl-core")
 const queue = new Map()
-const { Menu } = require('discord.js-menu') //npm i discord.js-menu
-const { DiscordTogether } = require("discord-together") // npm i discord-together
+const { Menu } = require('discord.js-menu')
+const { DiscordTogether } = require("discord-together")
 prefix = "~"
 client.discordTogether = new DiscordTogether(client)
 

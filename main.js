@@ -214,7 +214,7 @@ client.on("message", msg => {
   if (msg.content === `${prefix}startyt`) {
     if (msg.member.voice.channel) {
       client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'youtube').then(async invite => {
-        return msg.channel.send(`Please CLIKC ON THIS LINK to join: ${invite.code}`)
+        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
       })
     }
   }

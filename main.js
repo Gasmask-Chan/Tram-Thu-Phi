@@ -7,6 +7,7 @@ const ytdl = require("ytdl-core")
 const queue = new Map()
 const { Menu } = require('discord.js-menu')
 const { DiscordTogether } = require("discord-together")
+const currentDate = new Date();
 prefix = "~"
 client.discordTogether = new DiscordTogether(client)
 
@@ -45,6 +46,7 @@ client.on("message", msg => {
   }
 
   if (msg.content.includes("727") || (msg.content.includes("wysi"))) {
+    if (msg.content.includes("emojis")) return
     msg.channel.send("https://cdn.discordapp.com/emojis/810843992346460191.gif?v=1")
   }
   
@@ -267,6 +269,10 @@ client.on("message", msg => {
           msg.reply(`You rolled ${number}.`)
         }
       }
+  }
+
+  if (msg.content === `${prefix}today`) {
+    msg.channel.send(`Today is ${currentDate.toLocaleString()}`);
   }
 })
 

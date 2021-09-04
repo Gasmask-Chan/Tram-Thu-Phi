@@ -129,6 +129,11 @@ client.on("message", msg => {
               name: "~discordgift",
               value: "Free 1 Year of Nitro 😱😱😱",
               inline: false
+            },
+            {
+              name: "~roll",
+              value: "Get a random number (Can you get 727?)",
+              inline: false
             }
           ]
         }),
@@ -208,7 +213,7 @@ client.on("message", msg => {
   if (msg.content === `${prefix}discordgift`){
     msg.channel.send("https://discordgift.site/pqM7dUWuL8TR9OWF")
    setTimeout(function () {msg.channel.send("https://cdn.discordapp.com/emojis/880989337913815061.png?v=1")
-   },2500)
+   },5000)
   }
 
   if (msg.content === `${prefix}startyt`) {
@@ -249,6 +254,19 @@ client.on("message", msg => {
         return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
       })
     }
+  }
+
+  if (msg.content === `${prefix}roll`) {
+    var number = Math.floor(Math.random() * 1000) + 1
+    if (number == 727) {
+      msg.reply(`YOU FUCKING ROLLED ${number}!! WHEN YOU FUCKING SEE IT!`)
+    } else {
+      if (number == 666) {
+        msg.reply(`You rolled ${number}. Wtf man? :skull:`)
+      } else {
+          msg.reply(`You rolled ${number}.`)
+        }
+      }
   }
 })
 

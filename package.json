@@ -18,9 +18,12 @@
     "discord.js-menu": "^2.3.1",
     "dotenv": "^8.6.0",
     "ffmpeg": "^0.0.4",
+    "ffmpeg-static": "^4.4.0",
     "fluent-ffmpeg": "^2.1.2",
     "ytdl": "^1.4.1",
-    "ytdl-core": "^4.9.1"
+    "ytdl-core": "^4.9.1",
+    "ytpl": "^2.2.3",
+    "ytsr": "^3.5.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"

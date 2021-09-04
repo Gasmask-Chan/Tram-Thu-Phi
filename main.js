@@ -50,15 +50,11 @@ client.on("message", msg => {
     msg.channel.send("https://cdn.discordapp.com/emojis/810843992346460191.gif?v=1")
   }
   
-  if (msg.content.includes("fc")) {
-    msg.channel.send("https://cdn.discordapp.com/attachments/661857321579970581/882816415235706900/FB_IMG_16228065492074030.jpg")
-  }
-
   if (msg.content.includes("horny") || (msg.content.includes("hỏny"))) {
     msg.react("<a:koronebonkhorny:879355729046298716>")
   }
 
-  if (msg.content.includes("chôn") || (msg.content.includes("chon") || (msg.content.includes("troll")))) {
+  if (msg.content.includes("chôn") || (msg.content.includes("chon") || (msg.content.includes("troll") || (msg.content.includes("trôn"))))) {
     msg.react("<:chon:883178837758865418>")
   }
   
@@ -134,7 +130,7 @@ client.on("message", msg => {
             },
             {
               name: "~roll",
-              value: "Get a random number (Can you get 727?)",
+              value: "Get a random number in range 1 to 1000 (Can you get 727?)",
               inline: false
             }
           ]
@@ -151,28 +147,28 @@ client.on("message", msg => {
           description: "Lets play!!",
           fields: [
             {
-              name: "~startyt",
+              name: "~start yt",
               value: "Watching Youtube together.",
               inline: false
             },
             {
-              name: "~startpoker",
+              name: "~start poker",
               value: "Play Poker",
               inline: false
             },
             {
-             name: "~startchess",
+             name: "~start chess",
              value: "Play Chess",
              inline: false 
             },
             {
-              name: "~startbetrayal",
+              name: "~start betrayal",
               value: "Play Betrayal.io",
               inline: false
             },
             {
-              name: "~startfishing",
-              value: "Catch fish ",
+              name: "~start fishing",
+              value: "Catch fish",
               inline: true
             }
           ]
@@ -218,7 +214,7 @@ client.on("message", msg => {
    },5000)
   }
 
-  if (msg.content === `${prefix}startyt`) {
+  if (msg.content === `${prefix}start yt`) {
     if (msg.member.voice.channel) {
       client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'youtube').then(async invite => {
         return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
@@ -226,7 +222,7 @@ client.on("message", msg => {
     }
   }
 
-  if (msg.content === `${prefix}startpoker`) {
+  if (msg.content === `${prefix}start poker`) {
     if (msg.member.voice.channel) {
       client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'poker').then(async invite => {
         return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
@@ -234,7 +230,7 @@ client.on("message", msg => {
     }
   }
 
-  if (msg.content === `${prefix}startchess`) {
+  if (msg.content === `${prefix}start chess`) {
     if (msg.member.voice.channel) {
       client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'chess').then(async invite => {
         return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
@@ -242,7 +238,7 @@ client.on("message", msg => {
     }
   }
 
-  if (msg.content === `${prefix}startbetrayal`) {
+  if (msg.content === `${prefix}start betrayal`) {
     if (msg.member.voice.channel) {
       client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'betrayal').then(async invite => {
         return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
@@ -250,7 +246,7 @@ client.on("message", msg => {
     }
   }
 
-  if (msg.content === `${prefix}startfishing`) {
+  if (msg.content === `${prefix}start fishing`) {
     if (msg.member.voice.channel) {
       client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'fishing').then(async invite => {
         return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
@@ -272,7 +268,7 @@ client.on("message", msg => {
   }
 
   if (msg.content === `${prefix}today`) {
-    msg.channel.send(`Today is ${currentDate.toLocaleString()}`);
+    msg.channel.send(`Today is ${currentDate.toString()}`);
   }
 })
 

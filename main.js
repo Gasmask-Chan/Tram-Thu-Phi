@@ -15,7 +15,7 @@ client.on("ready", () => {
 
   client.user.setPresence({
     activity: {
-      name: "🤣👉"
+      name: "♿"
     }
   })
 })

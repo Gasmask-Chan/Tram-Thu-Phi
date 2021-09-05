@@ -193,6 +193,11 @@ client.on("message", msg => {
               name: "NHaiAnh07",
               value: "https://bit.ly/NHaiAnh07pf",
               inline: true
+            },
+            {
+              name: "Source Code:",
+              value: "||https://github.com/Gasmask-Chan/Tram-Thu-Phi||",
+              inline: false
             }
           ]
         }),

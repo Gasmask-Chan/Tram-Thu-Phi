@@ -10,6 +10,7 @@ const { DiscordTogether } = require("discord-together")
 const currentDate = new Date();
 prefix = "~"
 client.discordTogether = new DiscordTogether(client)
+const pepenhi = ["hai anh", "haianh", "nhaianh", "hải anh", "Hải Anh", "bot"]
 
 client.on("ready", () => {
   console.log("The bot is ready, LETS GOOOOOOOOOOO!")
@@ -23,6 +24,7 @@ client.on("ready", () => {
 
 client.on("message", msg => {
   if (msg.channel.type === "dm") return
+  if (msg.author.bot) return
 
   if (msg.content === "arakami") {
     msg.channel.send("Người sẽ không bao giờ roll ra botan!")
@@ -40,9 +42,11 @@ client.on("message", msg => {
     msg.channel.send("月")
   }
 
-  if (msg.content.includes("ngu")) {
-    if (msg.content === "nguyet" || msg.content === "nguyệt") return
+  if (msg.content.includes("ngu") && pepenhi.some(checkhaianh)){
     msg.react("👍")
+  }
+  function checkhaianh(names) {
+    return msg.content.includes(names)
   }
 
   if (msg.content.includes("727") || (msg.content.includes("wysi"))) {
@@ -271,15 +275,11 @@ client.on("message", msg => {
         }
       }
   }
-
-  if (msg.content === `${prefix}today`) {
-    msg.channel.send(`Today is ${currentDate.toString()}`);
-  }
 })
 
 client.on("message", msg => {
-  if (msg.author.bot) return false
-  if (msg.content.includes("@here") || msg.content.includes("@everyone")) return false
+  if (msg.author.bot) return
+  if (msg.content.includes("@here") || msg.content.includes("@everyone")) return
   if (msg.mentions.has(client.user.id)) {
     msg.channel.send(`Hello? If you're looking for my prefix then its ${prefix}!`)
   }

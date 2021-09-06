@@ -43,6 +43,7 @@ client.on("message", msg => {
   }
 
   if (msg.content.includes("ngu") && pepenhi.some(checkhaianh)){
+    if (msg.author.id === "648504249050857482") return
     msg.react("👍")
   }
   function checkhaianh(names) {

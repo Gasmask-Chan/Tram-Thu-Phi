@@ -276,6 +276,11 @@ client.on("message", msg => {
         }
       }
   }
+
+  //ngu hai anh
+  if (msg.content === `${prefix}vanmau ruleplayer`){
+    msg.channel.send("Này ông, tôi không biết ông thấy như thế nào, nhưng đối với tôi, nó ngu, cơ mà có vẻ như nó không đáp ứng được tiêu chí là một thông báo giải cho anh em trong server và cả tôi, tôi chắc chắn rằng ông có thể đọc luật. Nhưng không, tôi và cả anh em staff trong server cảm thấy thật buồn khi có ông trong server, chúng tôi bị triggered về những cố gắng ông đã đóng góp để phát triển cơn giận trong tôi và anh em staff, chào ông và thân ái :wave:")
+  }
 })
 
 client.on("message", msg => {

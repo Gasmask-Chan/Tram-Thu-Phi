@@ -30,12 +30,11 @@ client.on("message", msg => {
   if (msg.channel.type === "dm") return
   if (msg.author.bot) return
 
-  banchoclient.on("JOIN", member => {
-    if (member.user.ircUsername.toLowerCase().includes("GasmaskChan")) {
-      client.channels.cache.get("758994322900516875").send(`${member.user.ircUsername} has logged in.`)
-    }
-  })
-
+// banchoclient.on("JOIN", member => {
+//    if (member.user.ircUsername.toLowerCase().includes("GasmaskChan")) {
+//      client.channels.cache.get("758994322900516875").send(`${member.user.ircUsername} has logged in.`)
+//    }
+//  })
   if (msg.content === "arakami") {
     msg.channel.send("Người sẽ không bao giờ roll ra botan!")
   }
@@ -296,5 +295,5 @@ client.on("message", msg => {
   }
 })
 
-banchoclient.connect()
+//banchoclient.connect()
 client.login(process.env.BOT_TOKEN)

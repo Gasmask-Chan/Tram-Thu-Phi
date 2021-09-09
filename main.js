@@ -1,8 +1,12 @@
 require("dotenv").config()
 
 const Discord = require("discord.js")
-const { MessageEmbed } = require("discord.js")
 const client = new Discord.Client()
+
+const Banchojs = require("bancho.js")
+const banchoclient = new Banchojs.BanchoClient({ username: `${process.env.USERNAME}`, password: `${process.env.IRC_PASSWORD}`})
+
+const { MessageEmbed } = require("discord.js")
 const ytdl = require("ytdl-core")
 const queue = new Map()
 const { Menu } = require('discord.js-menu')
@@ -26,6 +30,11 @@ client.on("message", msg => {
   if (msg.channel.type === "dm") return
   if (msg.author.bot) return
 
+// banchoclient.on("JOIN", member => {
+//    if (member.user.ircUsername.toLowerCase().includes("GasmaskChan")) {
+//      client.channels.cache.get("758994322900516875").send(`${member.user.ircUsername} has logged in.`)
+//    }
+//  })
   if (msg.content === "arakami") {
     msg.channel.send("Người sẽ không bao giờ roll ra botan!")
   }
@@ -50,11 +59,6 @@ client.on("message", msg => {
     return msg.content.includes(names)
   }
 
-  if (msg.content.includes("727") || (msg.content.includes("wysi"))) {
-    if (msg.content.includes("emojis")) return
-    msg.channel.send("https://cdn.discordapp.com/emojis/810843992346460191.gif?v=1")
-  }
-  
   if (msg.content.includes("horny") || (msg.content.includes("hỏny"))) {
     msg.react("<a:koronebonkhorny:879355729046298716>")
   }
@@ -291,4 +295,5 @@ client.on("message", msg => {
   }
 })
 
+//banchoclient.connect()
 client.login(process.env.BOT_TOKEN)

@@ -300,12 +300,7 @@ banchoclient.connect().then(() => {
           if (member.user.ircUsername.includes("NHaiAnh07")) {
             client.channels.cache.get("809443529322528798").send(`con cho nghien ${member.user.ircUsername} vua dang nhap vao osu.`)
           }
-      })
-      banchoclient.on("PART", member => {
-          if (member.user.ircUsername.includes("NHaiAnh07")) {
-            client.channels.cache.get("809443529322528798").send(`con cho nghien ${member.user.ircUsername} da thoat game vi bi gank kkk.`)
-          }
-      })
+      }) 
   }) 
 }).catch(console.error)
 

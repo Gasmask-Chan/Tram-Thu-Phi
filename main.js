@@ -304,4 +304,4 @@ banchoclient.connect().then(() => {
   }) 
 }).catch(console.error)
 
-client.login(process.env.BOT_TOKEN)
+client.login(BOT_TOKEN)

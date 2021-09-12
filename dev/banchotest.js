@@ -20,6 +20,6 @@ client.connect().then(() => {
                 console.log(`${member.user.ircUsername} has logged out.`)
             }
         })
-    }) 
+    })
 }).catch(console.error)
 

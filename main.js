@@ -299,6 +299,7 @@ banchoclient.connect().then(() => {
     banchoclient.on("JOIN", member => {
           if (member.user.ircUsername.includes("NHaiAnh07")) {
             client.channels.cache.get("809443529322528798").send(`con cho nghien ${member.user.ircUsername} vua dang nhap vao osu.`)
+            client.getUser("NHaiAnh07").sendMessage("tat game mau thang cho nghien nay") 
           }
       }) 
   }) 

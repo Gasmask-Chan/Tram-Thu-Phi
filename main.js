@@ -1,10 +1,12 @@
 require("dotenv").config()
 
+const {BOT_TOKEN, IRC_USERNAME, IRC_PASSWORD, OSU_API_KEY} = process.env
+
 const Discord = require("discord.js")
 const client = new Discord.Client()
 
 const Banchojs = require("bancho.js")
-const banchoclient = new Banchojs.BanchoClient({ username: `${process.env.USERNAME}`, password: `${process.env.IRC_PASSWORD}`})
+const banchoclient = new Banchojs.BanchoClient({ username: IRC_USERNAME, password: IRC_PASSWORD, apiKey: OSU_API_KEY})
 
 const { MessageEmbed } = require("discord.js")
 const ytdl = require("ytdl-core")
@@ -24,17 +26,12 @@ client.on("ready", () => {
       name: "♿"
     }
   })
+  
 })
 
 client.on("message", msg => {
   if (msg.channel.type === "dm") return
   if (msg.author.bot) return
-
-//  banchoclient.on("JOIN", member => {
-//    if (member.user.ircUsername.toLowerCase().includes("GasmaskChan")) {
-//      client.channels.cache.get("758994322900516875").send(`${member.user.ircUsername} has logged in.`)
-//    }
-//  })
 
   if (msg.content === "arakami") {
     msg.channel.send("Người sẽ không bao giờ roll ra botan!")
@@ -296,5 +293,23 @@ client.on("message", msg => {
   }
 })
 
-//banchoclient.connect()
+banchoclient.connect().then(() => {
+  console.log("Connected to Bancho.")
+  banchoclient.on("PM", message => {
+    client.channels.cache.get("758994322900516875").send(`${message.user.ircUsername}: ${message.message}`)
+  })
+  banchoclient.getChannel("#vietnamese").join().then(() => {
+    banchoclient.on("JOIN", member => {
+          if (member.user.ircUsername.includes("NHaiAnh07") || member.user.ircUsername.includes("genesis97")) {
+              console.log(`${member.user.ircUsername} has logged in.`)
+          }
+      })
+      banchoclient.on("PART", member => {
+          if (member.user.ircUsername.includes("NHaiAnh07") || member.user.ircUsername.includes("genesis97")) {
+              console.log(`${member.user.ircUsername} has logged out.`)
+          }
+      })
+  }) 
+}).catch(console.error)
+
 client.login(process.env.BOT_TOKEN)

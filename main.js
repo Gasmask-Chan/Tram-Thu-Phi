@@ -65,6 +65,10 @@ client.on("message", msg => {
     msg.react("<:chon:883178837758865418>")
   }
   
+  if (msg.content.toLowerCase() === "khò" || msg.content.toLowerCase() === "kho`" || msg.content.toLowerCase() === "kho") {
+    msg.channel.send("oyasumi~")
+  }
+  
   if (msg.content === "coldgreeneyes") {
     setTimeout(() => {
     msg.channel.send("Everchanging")
@@ -301,7 +305,7 @@ banchoclient.connect().then(() => {
             client.channels.cache.get("809443529322528798").send(`con cho nghien ${member.user.ircUsername} vua dang nhap vao osu.`)
             banchoclient.getUser("NHaiAnh07").sendMessage("tat game mau thang cho nghien nay") 
           }
-      }) 
+      })
   }) 
 }).catch(console.error)
 

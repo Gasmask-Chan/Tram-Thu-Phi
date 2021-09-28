@@ -57,6 +57,10 @@ client.on("message", msg => {
     return msg.content.includes(names)
   }
 
+  if (msg.content === ">osutop" && msg.author.id === "648504249050857482") {
+    msg.channel.send("Ban la nhat")
+  }
+
   if (msg.content.includes("horny") || (msg.content.includes("hỏny"))) {
     msg.react("<a:koronebonkhorny:879355729046298716>")
   }

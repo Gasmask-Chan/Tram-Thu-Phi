@@ -23,7 +23,7 @@ client.on("ready", () => {
 
   client.user.setPresence({
     activity: {
-      name: "♿"
+      name: "Nhi"
     }
   })
   
@@ -62,6 +62,7 @@ client.on("message", msg => {
   }
 
   if (msg.content.includes("horny") || (msg.content.includes("hỏny"))) {
+    if (msg.content.includes(`${prefix}hornyrate`)) return
     msg.react("<a:koronebonkhorny:879355729046298716>")
   }
 
@@ -147,6 +148,16 @@ client.on("message", msg => {
               name: "~roll",
               value: "Get a random number in range 1 to 1000 (Can you get 727?)",
               inline: false
+            },
+            {
+              name: "~hornyrate",
+              value: "Are you horny?",
+              inline: false
+            },
+            {
+              name: "~ngurate",
+              value: "How much % of your stupidity?",
+              inline: false
             }
           ]
         }),
@@ -231,7 +242,7 @@ client.on("message", msg => {
   if (msg.content === `${prefix}discordgift`){
     msg.channel.send("https://discordgift.site/pqM7dUWuL8TR9OWF")
    setTimeout(function () {msg.channel.send("https://cdn.discordapp.com/emojis/880989337913815061.png?v=1")
-   },5000)
+   },10000)
   }
 
   if (msg.content === `${prefix}start yt`) {
@@ -285,6 +296,18 @@ client.on("message", msg => {
           msg.reply(`You rolled ${number}.`)
         }
       }
+  }
+
+  if (msg.content.includes(`${prefix}hornyrate`)) {
+    var n = Math.floor(Math.random() * 100) + 1
+    msg.channel.send(`${n}% Horny`)
+  }
+
+  if (msg.content.includes(`${prefix}ngurate`)) {
+    if (msg.author.id === "648504249050857482") { msg.channel.send("May ngu la cai chac roi con hoi?")}
+    if (msg.content.includes("<@!648504249050857482>")) { msg.channel.send("NhaiAnh ngu so 1 Southeast Asia"); return} 
+    var n = Math.floor(Math.random() * 100) + 1
+    msg.channel.send(`${n}% Ngu`)
   }
 
   //ngu hai anh

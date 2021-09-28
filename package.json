@@ -5,13 +5,15 @@
   "main": "main.js",
   "scripts": {
     "start": "node main.js",
-    "devstart": "nodemon main.js"
+    "devstart": "nodemon main.js",
+    "banchostart": "nodemon ./dev/banchotest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.5.3",
+    "ansi-regex": "^6.0.1",
     "bancho.js": "^0.9.7",
     "discord-together": "^1.1.62",
     "discord.js": "^12.5.3",

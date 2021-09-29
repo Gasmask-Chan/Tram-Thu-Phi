@@ -2,9 +2,10 @@ require("dotenv").config()
 
 const {BOT_TOKEN, IRC_USERNAME, IRC_PASSWORD, OSU_API_KEY} = process.env
 
-const Discord = require("discord.js")
-const client = new Discord.Client()
-
+const { Client, Intents } = require('discord.js');
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const intents = new Discord.Intents();
 const Banchojs = require("bancho.js")
 const banchoclient = new Banchojs.BanchoClient({ username: IRC_USERNAME, password: IRC_PASSWORD, apiKey: OSU_API_KEY})
 
@@ -92,8 +93,39 @@ client.on("message", msg => {
       msg.channel.send("AWOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
     },12000);
   }
+  if (msg.content === "geddan") {
+    setTimeout(() => {
+    msg.channel.send("Get down")
+    },500);
+    setTimeout(() => {   
+     msg.channel.send("Yureru mawaru fureru setsunai kimochi")
+    },2000);
+    setTimeout(() => {
+      msg.channel.send("Futari de issho ni nemuru winter land")
+    },4000);
+    setTimeout(() => {
+      msg.channel.send("Anata dake mitsumete watashi dake mitsumete")
+    },6000);
+    setTimeout(() => {
+      msg.channel.send("Asu wo chikau")
+    },8000);
+    setTimeout(() => {
+      msg.channel.send("Gyutto dakare moeru koigokoro")
+    },12000);
+    setTimeout(() => {
+      msg.channel.send("Hageshiku maichiru yuki ni tsutsumarete")
+    },13000);
+    setTimeout(() => {
+      msg.channel.send("Eien ni ai shiteru kyou yori ai shiteru")
+    },14000);
+    setTimeout(() => {
+      msg.channel.send("Zutto eternal love")
+    },15000);
+    setTimeout(() => {
+      msg.channel.send("- dit me thang An")
+    },16000);
+  }
 })
-
 client.on("message", msg => {
   if (msg.author.bot) return
   if (msg.channel.type === "dm") return

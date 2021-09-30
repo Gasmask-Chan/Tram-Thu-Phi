@@ -41,7 +41,7 @@ client.on("message", msg => {
     msg.channel.send("Suki Suki Daisuki")
   }
 
-  if (msg.content === "uk rs") {
+  if (msg.content.toLowerCase().includes("uk rs")) {
     msg.channel.send(":flag_gb: :flag_ru:")
   }
 

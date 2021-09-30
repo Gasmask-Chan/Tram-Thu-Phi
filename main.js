@@ -101,6 +101,37 @@ client.on("message", msg => {
       msg.channel.send("AWOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
     },12000);
   }
+
+  if (msg.content === "geddan") {
+    setTimeout(() => {
+    msg.channel.send("Get down")
+    },500);
+    setTimeout(() => {   
+     msg.channel.send("Yureru mawaru fureru setsunai kimochi")
+    },2000);
+    setTimeout(() => {
+      msg.channel.send("Futari de issho ni nemuru winter land")
+    },4000);
+    setTimeout(() => {
+      msg.channel.send("Anata dake mitsumete watashi dake mitsumete")
+    },6000);
+    setTimeout(() => {
+      msg.channel.send("Asu wo chikau")
+    },8000);
+    setTimeout(() => {
+      msg.channel.send("Gyutto dakare moeru koigokoro")
+    },12000);
+    setTimeout(() => {
+      msg.channel.send("Hageshiku maichiru yuki ni tsutsumarete")
+    },13000);
+    setTimeout(() => {
+      msg.channel.send("Eien ni ai shiteru kyou yori ai shiteru")
+    },14000);
+    setTimeout(() => {
+      msg.channel.send("Zutto eternal love")
+    },15000);
+  }
+
 })
 
 client.on("message", msg => {

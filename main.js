@@ -16,7 +16,8 @@ const { DiscordTogether } = require("discord-together")
 const currentDate = new Date();
 prefix = "~"
 client.discordTogether = new DiscordTogether(client)
-const pepenhi = ["hai anh", "haianh", "nhaianh", "hải anh", "Hải Anh", "bot"]
+const pepenhi = ["hai anh", "haianh", "nhaianh", "hải anh", "bot"]
+const chonkk = ["chon", "chôn", "trôn", "troll"]
 
 client.on("ready", () => {
   console.log("The bot is ready, LETS GOOOOOOOOOOO!")
@@ -49,12 +50,12 @@ client.on("message", msg => {
     msg.channel.send("月")
   }
 
-  if (msg.content.includes("ngu") && pepenhi.some(checkhaianh)){
+  if (msg.content.toLowerCase().includes("ngu") && pepenhi.some(checkhaianh)){
     if (msg.author.id === "648504249050857482") return
     msg.react("👍")
   }
   function checkhaianh(names) {
-    return msg.content.includes(names)
+    return msg.content.toLowerCase().includes(names)
   }
 
   if (msg.content === ">osutop" && msg.author.id === "648504249050857482") {
@@ -66,10 +67,13 @@ client.on("message", msg => {
     msg.react("<a:koronebonkhorny:879355729046298716>")
   }
 
-  if (msg.content.includes("chôn") || (msg.content.includes("chon") || (msg.content.includes("troll") || (msg.content.includes("trôn"))))) {
+  if (chonkk.some(checkchon)) {
     msg.react("<:chon:883178837758865418>")
   }
-  
+  function checkchon(chonthe) {
+    return msg.content.toLowerCase().includes(chonthe)
+  }
+
   if (msg.content.toLowerCase() === "khò" || msg.content.toLowerCase() === "kho`" || msg.content.toLowerCase() === "kho") {
     msg.channel.send("oyasumi~")
   }

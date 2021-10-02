@@ -104,32 +104,35 @@ client.on("message", msg => {
 
   if (msg.content === "geddan") {
     setTimeout(() => {
-    msg.channel.send("Get down")
+    msg.channel.send("Get")
     },500);
+    setTimeout(() => {
+    msg.channel.send("Down")
+    },1000);
     setTimeout(() => {   
-     msg.channel.send("Yureru mawaru fureru setsunai kimochi")
+     msg.channel.send("Yureru mawaru fureru setsunai")
     },2000);
     setTimeout(() => {
-      msg.channel.send("Futari de issho ni nemuru winter land")
-    },4000);
-    setTimeout(() => {
-      msg.channel.send("Anata dake mitsumete watashi dake mitsumete")
+    msg.channel.send("Kimochi")
     },6000);
     setTimeout(() => {
-      msg.channel.send("Asu wo chikau")
-    },8000);
+      msg.channel.send("Futari de issho ni nemuru winter land")
+    },10000);
     setTimeout(() => {
-      msg.channel.send("Gyutto dakare moeru koigokoro")
-    },12000);
-    setTimeout(() => {
-      msg.channel.send("Hageshiku maichiru yuki ni tsutsumarete")
-    },13000);
-    setTimeout(() => {
-      msg.channel.send("Eien ni ai shiteru kyou yori ai shiteru")
-    },14000);
-    setTimeout(() => {
-      msg.channel.send("Zutto eternal love")
+      msg.channel.send("Anata")
     },15000);
+    setTimeout(() => {
+      msg.channel.send("Dake mitsumete")
+    },17000);
+    setTimeout(() => {
+      msg.channel.send("Watashi dake mitsumete")
+    },19000);
+    setTimeout(() => {
+      msg.channel.send("Asu woooooo")
+    },21000);
+    setTimeout(() => {
+      msg.channel.send("Chikau")
+    },28000);
   }
 
 })

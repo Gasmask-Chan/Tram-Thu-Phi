@@ -34,7 +34,7 @@ client.on("message", msg => {
   if (msg.channel.type === "dm") return
   if (msg.author.bot) return
 
-  if (msg.content === "arakami") {
+  if (msg.content.toLowerCase() === "ara kami") {
     msg.channel.send("Người sẽ không bao giờ roll ra botan!")
   }
 
@@ -78,7 +78,7 @@ client.on("message", msg => {
     msg.channel.send("oyasumi~")
   }
   
-  if (msg.content === "coldgreeneyes") {
+  if (msg.content === "~coldgreeneyes") {
     setTimeout(() => {
     msg.channel.send("Everchanging")
     },500);
@@ -102,7 +102,7 @@ client.on("message", msg => {
     },12000);
   }
 
-  if (msg.content === "geddan") {
+  if (msg.content === "~geddan") {
     setTimeout(() => {
     msg.channel.send("Get")
     },500);

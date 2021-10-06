@@ -289,6 +289,7 @@ client.on("message", msg => {
         return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
       })
     }
+    else (msg.reply("You must to connect the voice channel to use this command!"))
   }
 
   if (msg.content === `${prefix}start poker`) {
@@ -297,6 +298,7 @@ client.on("message", msg => {
         return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
       })
     }
+    else (msg.reply("You must to connect the voice channel to use this command!"))
   }
 
   if (msg.content === `${prefix}start chess`) {
@@ -305,6 +307,7 @@ client.on("message", msg => {
         return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
       })
     }
+    else (msg.reply("You must to connect the voice channel to use this command!"))
   }
 
   if (msg.content === `${prefix}start betrayal`) {
@@ -313,6 +316,7 @@ client.on("message", msg => {
         return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
       })
     }
+    else (msg.reply("You must to connect the voice channel to use this command!"))
   }
 
   if (msg.content === `${prefix}start fishing`) {
@@ -321,6 +325,7 @@ client.on("message", msg => {
         return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
       })
     }
+    else (msg.reply("You must to connect the voice channel to use this command!"))
   }
 
   if (msg.content === `${prefix}roll`) {

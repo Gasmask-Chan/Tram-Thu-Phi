@@ -375,6 +375,10 @@ banchoclient.connect().then(() => {
             client.channels.cache.get("809443529322528798").send(`con cho nghien ${member.user.ircUsername} vua dang nhap vao osu.`)
             banchoclient.getUser("NHaiAnh07").sendMessage("tat game mau thang cho nghien nay") 
           }
+
+          if (member.user.ircUsername.includes("genesis97")) {
+            client.channels.cache.get("809443529322528798").send(`dit me may ${member.user.ircUsername} thay vi dang nhap vao osu thi sao khong solo bu cac voi hai anh <:pepeangry:889414518751494204>`)
+          }
       })
   }) 
 }).catch(console.error)

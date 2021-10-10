@@ -377,7 +377,7 @@ banchoclient.connect().then(() => {
           }
 
           if (member.user.ircUsername.includes("genesis97")) {
-            client.channels.cache.get("809443529322528798").send(`dit me may ${member.user.ircUsername} thay vi dang nhap vao osu thi sao khong solo bu cac voi hai anh <:pepeangry:889414518751494204>`)
+            client.channels.cache.get("809443529322528798").send(`dit me may ${member.user.ircUsername} choi osu cc di bu cac hai anh nhanh <:pepeangry:889414518751494204>`)
           }
       })
   }) 

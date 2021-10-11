@@ -363,7 +363,7 @@ client.on("message", msg => {
   if (msg.author.bot) return
   if (msg.content.includes("@here") || msg.content.includes("@everyone")) return
   if (msg.mentions.has(client.user.id)) {
-    msg.channel.send(`Hello? If you're looking for my prefix then its ${prefix}!`)
+    msg.channel.send(`Hello? If you're looking for my prefix then its` + " ``" + `${prefix}` + "``")
   }
 })
 

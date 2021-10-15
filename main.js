@@ -363,7 +363,17 @@ client.on("message", msg => {
   if (msg.author.bot) return
   if (msg.content.includes("@here") || msg.content.includes("@everyone")) return
   if (msg.mentions.has(client.user.id)) {
+    if (msg.content.includes("sech ko em")) {
+      if (msg.author.id === "642719140796301322") {
+        msg.reply("ok anh <:Sataniauwu:850315132386672640>")
+      }
+      else {
+        msg.reply("m cut")
+      }
+    }
+    else {
     msg.channel.send(`Hello? If you're looking for my prefix then its` + " ```" + `${prefix}` + "```")
+    }
   }
 })
 

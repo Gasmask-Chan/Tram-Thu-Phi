@@ -38,7 +38,7 @@ client.on("message", msg => {
     msg.channel.send("Người sẽ không bao giờ roll ra botan!")
   }
 
-  if (msg.content === "hime hime") {
+  if (msg.content.toLocaleLowerCase() === "hime hime") {
     msg.channel.send("Suki Suki Daisuki")
   }
 

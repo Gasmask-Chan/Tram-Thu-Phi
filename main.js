@@ -79,14 +79,16 @@ client.on("message", msg => {
   }
   
   if (msg.content.toLocaleLowerCase().includes("den lam") || msg.content.toLocaleLowerCase().includes("đen lắm")) {
-    if (msg.member.roles.cache.some(role => role.id === "750283340996673559")) return
-    if (msg.member.roles.cache.some(role => role.id == "809610383043592242")) return
-    if (msg.author.bot) return
-    msg.member.roles.add("896751489358368768")
-    msg.reply("Ban da bi gui vao lau dai tinh ai 5 phut")
-    setTimeout(() => {
-      msg.member.roles.remove("896751489358368768")
-    }, 300000)
+    if (msg.guild.id == "678893111182622732") {
+      if (msg.member.roles.cache.some(role => role.id === "750283340996673559")) return
+      if (msg.member.roles.cache.some(role => role.id == "809610383043592242")) return
+      if (msg.author.bot) return
+      msg.member.roles.add("896751489358368768")
+      msg.reply("Ban da bi gui vao lau dai tinh ai 5 phut")
+      setTimeout(() => {
+        msg.member.roles.remove("896751489358368768")
+      }, 300000)
+    }
   }
 
   if (msg.content === "~coldgreeneyes") {

@@ -18,8 +18,7 @@ prefix = "~"
 client.discordTogether = new DiscordTogether(client)
 const pepenhi = ["hai anh", "haianh", "nhaianh", "hải anh", "bot"]
 const chonkk = ["chon", "chôn", "trôn", "troll"]
-const den = ["den lam", "đen lắm", "den vl", "đen vl", "đen vãi lồn", "đen", "nigga", "nigg", "nig", "nigger"]
-const black = ["đen", "den"]
+const den = ["den lam", "đen lắm", "den vl", "đen vl", "đen vãi lồn", "đen", "nigga", "nigg", "nig", "nigger", "den"]
 
 client.on("ready", () => {
   console.log("The bot is ready, LETS GOOOOOOOOOOO!")
@@ -80,7 +79,7 @@ client.on("message", msg => {
     msg.channel.send("oyasumi~")
   }
   
-  if (den.some(checkden) || black.some(checkblack)) {
+  if (den.some(checkden)) {
     //only works if the messages is on the Neko no Sekai server.
     if (msg.guild.id == "678893111182622732") {
       if (msg.member.roles.cache.some(role => role.id === "750283340996673559")) return //if the message author has the owner role then return.
@@ -96,9 +95,6 @@ client.on("message", msg => {
   function checkden(denlam) {
     if (msg.content.toLowerCase().includes("màu đen") || msg.content.toLowerCase().includes("mau den")) return
     return msg.content.toLowerCase().includes(denlam)
-  }
-  function checkblack(quaden) {
-    return msg.content.toLowerCase() === quaden
   }
   if (msg.content === "~coldgreeneyes") {
     setTimeout(() => {

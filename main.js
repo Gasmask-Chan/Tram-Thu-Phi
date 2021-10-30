@@ -18,6 +18,8 @@ prefix = "~"
 client.discordTogether = new DiscordTogether(client)
 const pepenhi = ["hai anh", "haianh", "nhaianh", "hải anh", "bot"]
 const chonkk = ["chon", "chôn", "trôn", "troll"]
+const den = ["den lam", "đen lắm", "den vl", "đen vl", "đen vãi lồn", "đen"]
+const black = ["đen", "den"]
 
 client.on("ready", () => {
   console.log("The bot is ready, LETS GOOOOOOOOOOO!")
@@ -78,19 +80,26 @@ client.on("message", msg => {
     msg.channel.send("oyasumi~")
   }
   
-  if (msg.content.toLocaleLowerCase().includes("den lam") || msg.content.toLocaleLowerCase().includes("đen lắm")) {
+  if (den.some(checkden) || black.some(checkblack)) {
+    //only works if the messages is on the Neko no Sekai server.
     if (msg.guild.id == "678893111182622732") {
-      if (msg.member.roles.cache.some(role => role.id === "750283340996673559")) return
-      if (msg.member.roles.cache.some(role => role.id == "809610383043592242")) return
+      if (msg.member.roles.cache.some(role => role.id === "750283340996673559")) return //if the message author has the owner role then return.
+      if (msg.member.roles.cache.some(role => role.id == "809610383043592242")) return //if the message author has the admin role then return.
       if (msg.author.bot) return
-      msg.member.roles.add("896751489358368768")
+      msg.member.roles.add("896751489358368768") //Add the muted role.
       msg.reply("Ban da bi gui vao lau dai tinh ai 5 phut")
       setTimeout(() => {
         msg.member.roles.remove("896751489358368768")
       }, 300000)
     }
   }
-
+  function checkden(denlam) {
+    if (msg.content.toLowerCase().includes("màu đen") || msg.content.toLowerCase().includes("mau den")) return
+    return msg.content.toLowerCase().includes(denlam)
+  }
+  function checkblack(quaden) {
+    return msg.content.toLowerCase() === quaden
+  }
   if (msg.content === "~coldgreeneyes") {
     setTimeout(() => {
     msg.channel.send("Everchanging")

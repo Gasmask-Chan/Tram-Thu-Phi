@@ -93,7 +93,6 @@ client.on("message", msg => {
     }
   }
   function checkden(denlam) {
-    if (msg.content.toLowerCase().includes("màu đen") || msg.content.toLowerCase().includes("mau den")) return
     return msg.content.toLowerCase().includes(denlam)
   }
 

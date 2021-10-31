@@ -96,6 +96,7 @@ client.on("message", msg => {
     if (msg.content.toLowerCase().includes("màu đen") || msg.content.toLowerCase().includes("mau den")) return
     return msg.content.toLowerCase().includes(denlam)
   }
+  
   if (msg.content === "~coldgreeneyes") {
     setTimeout(() => {
     msg.channel.send("Everchanging")

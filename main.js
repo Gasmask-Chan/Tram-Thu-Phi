@@ -93,7 +93,7 @@ client.on("message", msg => {
     }
   }
   function checkden(denlam) {
-    return msg.content.toLowerCase().includes(denlam)
+    return msg.content.toLowerCase().includes(denlam) || msg.content.toLowerCase() === "đen"
   }
 
   if (msg.content === "~coldgreeneyes") {

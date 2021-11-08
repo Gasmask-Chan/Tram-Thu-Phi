@@ -18,7 +18,7 @@ prefix = "~"
 client.discordTogether = new DiscordTogether(client)
 const pepenhi = ["hai anh", "haianh", "nhaianh", "hải anh", "bot"]
 const chonkk = ["chon", "chôn", "trôn", "troll"]
-const den = ["nigga", "nigg", "nig", "nigger","đen lắm", "den lam"]
+const den = ["nigga", "nigg", "nigger","đen lắm", "den lam"]
 
 client.on("ready", () => {
   console.log("The bot is ready, LETS GOOOOOOOOOOO!")

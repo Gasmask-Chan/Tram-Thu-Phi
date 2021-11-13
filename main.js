@@ -35,10 +35,6 @@ client.on("message", msg => {
   if (msg.channel.type === "dm") return
   if (msg.author.bot) return
 
-  if (msg.content.toLowerCase() === "ara kami") {
-    msg.channel.send("Người sẽ không bao giờ roll ra botan!")
-  }
-
   if (msg.content.toLocaleLowerCase() === "hime hime") {
     msg.channel.send("Suki Suki Daisuki")
   }

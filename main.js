@@ -406,6 +406,13 @@ banchoclient.connect().then(() => {
           }
       })
   }) 
+  banchoclient.getChannel("#osu").join().then(() => {
+    banchoclient.on("JOIN", member => {
+          if (member.user.ircUsername.includes("genesis97")) {
+            client.channels.cache.get("809443529322528798").send(`dit me may ${member.user.ircUsername} hoc kieu bi lai`)
+          }
+      })
+  }) 
 }).catch(console.error)
 
 client.login(BOT_TOKEN)

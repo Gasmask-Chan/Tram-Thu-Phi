@@ -394,25 +394,18 @@ client.on("message", msg => {
 
 banchoclient.connect().then(() => {
   console.log("Connected to Bancho.")
-  banchoclient.getChannel("#vietnamese").join().then(() => {
+  banchoclient.getChannel("#osu").join().then(() => {         
     banchoclient.on("JOIN", member => {
           if (member.user.ircUsername.includes("NHaiAnh07")) {
             client.channels.cache.get("809443529322528798").send(`con cho nghien ${member.user.ircUsername} vua dang nhap vao osu.`)
             banchoclient.getUser("NHaiAnh07").sendMessage("tat game mau thang cho nghien nay") 
           }
-
+          
           if (member.user.ircUsername.includes("genesis97")) {
-            client.channels.cache.get("809443529322528798").send(`dit me may ${member.user.ircUsername} choi osu cc di bu cac hai anh nhanh <:pepeangry:889414518751494204>`)
+            client.channels.cache.get("809443529322528798").send(`dit me may ${member.user.ircUsername} hoc kieu bi lai trong oxu.`)
           }
       })
-  }) 
-  banchoclient.getChannel("#osu").join().then(() => {
-    banchoclient.on("JOIN", member => {
-          if (member.user.ircUsername.includes("genesis97")) {
-            client.channels.cache.get("809443529322528798").send(`dit me may ${member.user.ircUsername} hoc kieu bi lai`)
-          }
-      })
-  }) 
+  })  
 }).catch(console.error)
 
 client.login(BOT_TOKEN)

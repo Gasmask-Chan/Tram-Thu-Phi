@@ -249,6 +249,36 @@ client.on("message", msg => {
               name: "~start fishing",
               value: "Catch fish",
               inline: true
+            },
+            {
+              name: "~start lettertile",
+              value: "Play lettertile",
+              inline: false
+            },
+            {
+              name: "~start wordsnack",
+              value: "Play wordsnack",
+              inline: false
+            },
+            {
+              name: "~start doodlecrew",
+              value: "Play doodlecrew",
+              inline: false
+            },
+            {
+              name: "~start spellcast",
+              value: "Play spellcast",
+              inline: false
+            },
+            {
+              name: "~start awkword",
+              value: "Play awkword",
+              inline: false
+            },
+            {
+              name: "~start puttparty",
+              value: "Play puttparty",
+              inline: false
             }
           ]
         }),
@@ -270,7 +300,7 @@ client.on("message", msg => {
             },
             {
               name: "NHaiAnh07",
-              value: "https://bit.ly/NHaiAnh07pf", //de cho co thoi chu no co viet con cac gi may dau
+              value: "https://bit.ly/NHaiAnh07pf backy", //de cho co thoi chu no co viet con cac gi may dau
               inline: true
             },
             {
@@ -343,6 +373,59 @@ client.on("message", msg => {
     else (msg.reply("You must to connect the voice channel to use this command!"))
   }
 
+  if (msg.content === `${prefix}start lettertile`) {
+    if (msg.member.voice.channel) {
+      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'lettertile').then(async invite => {
+        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
+      })
+    }
+    else (msg.reply("You must to connect the voice channel to use this command!"))
+  }
+
+  if (msg.content === `${prefix}start wordsnack`) {
+    if (msg.member.voice.channel) {
+      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'wordsnack').then(async invite => {
+        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
+      })
+    }
+    else (msg.reply("You must to connect the voice channel to use this command!"))
+  }
+
+  if (msg.content === `${prefix}start doodlecrew`) {
+    if (msg.member.voice.channel) {
+      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'doodlecrew').then(async invite => {
+        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
+      })
+    }
+    else (msg.reply("You must to connect the voice channel to use this command!"))
+  }
+
+  if (msg.content === `${prefix}start spellcast`) {
+    if (msg.member.voice.channel) {
+      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'spellcast').then(async invite => {
+        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
+      })
+    }
+    else (msg.reply("You must to connect the voice channel to use this command!"))
+  }
+
+  if (msg.content === `${prefix}start awkword`) {
+    if (msg.member.voice.channel) {
+      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'awkword').then(async invite => {
+        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
+      })
+    }
+    else (msg.reply("You must to connect the voice channel to use this command!"))
+  }
+
+  if (msg.content === `${prefix}start puttparty`) {
+    if (msg.member.voice.channel) {
+      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'puttparty').then(async invite => {
+        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
+      })
+    }
+    else (msg.reply("You must to connect the voice channel to use this command!"))
+  }
   if (msg.content === `${prefix}roll`) {
     var number = Math.floor(Math.random() * 1000) + 1
     if (number == 727) {

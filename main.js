@@ -300,7 +300,7 @@ client.on("message", msg => {
             },
             {
               name: "NHaiAnh07",
-              value: "https://bit.ly/NHaiAnh07pf backy", //de cho co thoi chu no co viet con cac gi may dau
+              value: "https://bit.ly/NHaiAnh07pf", //de cho co thoi chu no co viet con cac gi may dau
               inline: true
             },
             {

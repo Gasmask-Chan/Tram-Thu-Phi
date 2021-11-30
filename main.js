@@ -426,6 +426,7 @@ client.on("message", msg => {
     }
     else (msg.reply("You must to connect the voice channel to use this command!"))
   }
+  
   if (msg.content === `${prefix}roll`) {
     var number = Math.floor(Math.random() * 1000) + 1
     if (number == 727) {

@@ -469,12 +469,14 @@ client.on("message", msg => {
   }
 
   if (msg.content === `${prefix}join`) {
+    const voiceChannel = msg.member.voice.channel
+    if (!voiceChannel) return msg.reply('You must to connect the voice channel to use this command!')
     const audioURL = googleTTS.getAudioUrl('Chào mừng bạn đến với đài tiếng nói của vợ Gasmask được tài trợ bởi akane bướm', {
       lang: 'vi',
       slow: false,
       host: 'https://translate.google.com',
     })
-    msg.member.voice.channel.join().then(connection => {
+    voiceChannel.join().then(connection => {
       connection.play(audioURL)
     })
   }
@@ -484,6 +486,8 @@ client.on("message", msg => {
   }
 
   if (msg.content.startsWith(`${prefix}tts`)) {
+    const voiceChannel = msg.member.voice.channel
+    if (!voiceChannel) return msg.reply('You must to connect the voice channel to use this command!')
     const string = msg.content.slice(4)
     if (string.length === 0) return msg.reply('Thêm text vào em')
     const audioURL = googleTTS.getAudioUrl(string, {
@@ -491,7 +495,7 @@ client.on("message", msg => {
       slow: false,
       host: 'https://translate.google.com',
     })
-    msg.member.voice.channel.join().then(connection => {
+    voiceChannel.join().then(connection => {
       connection.play(audioURL)
     })
   }

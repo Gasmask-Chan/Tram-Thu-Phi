@@ -8,6 +8,7 @@ const client = new Discord.Client()
 const Banchojs = require("bancho.js")
 const banchoclient = new Banchojs.BanchoClient({ username: IRC_USERNAME, password: IRC_PASSWORD, apiKey: OSU_API_KEY})
 
+const googleTTS = require('google-tts-api') 
 const { MessageEmbed } = require("discord.js")
 const ytdl = require("ytdl-core")
 const queue = new Map()
@@ -210,6 +211,16 @@ client.on("message", msg => {
             {
               name: "~ngurate",
               value: "How much % of your stupidity?",
+              inline: false
+            },
+            {
+              name: "~join / ~disconnect",
+              value: "Join / Disconnect the voice channel",
+              inline: false
+            },
+            {
+              name: "~tts <text>",
+              value: "text to speech (lower than 200 characters)",
               inline: false
             }
           ]
@@ -455,6 +466,34 @@ client.on("message", msg => {
   //ngu hai anh
   if (msg.content === `${prefix}vanmau ruleplayer`){
     msg.channel.send("Này ông, tôi không biết ông thấy như thế nào, nhưng đối với tôi, nó ngu, cơ mà có vẻ như nó không đáp ứng được tiêu chí là một thông báo giải cho anh em trong server và cả tôi, tôi chắc chắn rằng ông có thể đọc luật. Nhưng không, tôi và cả anh em staff trong server cảm thấy thật buồn khi có ông trong server, chúng tôi bị triggered về những cố gắng ông đã đóng góp để phát triển cơn giận trong tôi và anh em staff, chào ông và thân ái :wave:")
+  }
+
+  if (msg.content === `${prefix}join`) {
+    const audioURL = googleTTS.getAudioUrl('Chào mừng bạn đến với đài tiếng nói của vợ Gasmask được tài trợ bởi akane bướm', {
+      lang: 'vi',
+      slow: false,
+      host: 'https://translate.google.com',
+    })
+    msg.member.voice.channel.join().then(connection => {
+      connection.play(audioURL)
+    })
+  }
+
+  if (msg.content === `${prefix}disconnect`) {
+    msg.member.voice.channel.leave()
+  }
+
+  if (msg.content.startsWith(`${prefix}tts`)) {
+    const string = msg.content.slice(4)
+    if (string.length === 0) return msg.reply('Thêm text vào em')
+    const audioURL = googleTTS.getAudioUrl(string, {
+      lang: 'vi',
+      slow: false,
+      host: 'https://translate.google.com',
+    })
+    msg.member.voice.channel.join().then(connection => {
+      connection.play(audioURL)
+    })
   }
 })
 

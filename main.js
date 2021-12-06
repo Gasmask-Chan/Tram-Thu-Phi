@@ -490,6 +490,7 @@ client.on("message", msg => {
     if (!voiceChannel) return msg.reply('You must to connect the voice channel to use this command!')
     const string = msg.content.slice(4)
     if (string.length === 0) return msg.reply('Thêm text vào em')
+    if (string.length > 200) return msg.reply('Text dài quá sao nói hết được!')
     const audioURL = googleTTS.getAudioUrl(string, {
       lang: 'vi',
       slow: false,

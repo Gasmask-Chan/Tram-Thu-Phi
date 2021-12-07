@@ -480,7 +480,7 @@ client.on("message", msg => {
       connection.play(audioURL)
     })
   }
-  if (msg.content === `${prefix}cu`) {
+  if (msg.content === `${prefix}ai o si ma`) {
     msg.member.voice.channel.join().then( connection => { connection.play('https://www.myinstants.com/media/sounds/chinese-girl-laugh.mp3')})
   }
 

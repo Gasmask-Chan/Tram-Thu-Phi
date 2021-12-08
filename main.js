@@ -486,6 +486,18 @@ client.on("message", msg => {
     })
   }
 
+  if (msg.content === `${prefix}backy`) {
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/bac-ky.mp3')
+    })
+  }
+
+  if (msg.content === `${prefix}florentino`) {
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/florentino_cphRjcL.mp3')
+    })
+  }
+
   if (msg.content === `${prefix}disconnect`) {
     msg.member.voice.channel.leave()
   }

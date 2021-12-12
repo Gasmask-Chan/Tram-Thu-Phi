@@ -504,6 +504,25 @@ client.on("message", msg => {
     })
   }
 
+  if (msg.content === `${prefix}ping`) {
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/discord-notification.mp3')
+    })
+  }
+
+  
+  if (msg.content === `${prefix}taiwan`) {
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/asian_meme_sound.mp3')
+    })
+  }
+
+  if (msg.content === `${prefix}alert`) {
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/999-social-credit-siren.mp3')
+    })
+  }
+
   if (msg.content === `${prefix}disconnect`) {
     msg.member.voice.channel.leave()
   }

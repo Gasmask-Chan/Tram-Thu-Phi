@@ -481,30 +481,35 @@ client.on("message", msg => {
     })
   }
   if (msg.content === `${prefix}aiosima`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
     msg.member.voice.channel.join().then( connection =>{ 
       connection.play('https://www.myinstants.com/media/sounds/chinese-girl-laugh.mp3')
     })
   }
 
   if (msg.content === `${prefix}backy`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
     msg.member.voice.channel.join().then( connection =>{ 
       connection.play('https://www.myinstants.com/media/sounds/bac-ky.mp3')
     })
   }
 
   if (msg.content === `${prefix}florentino`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
     msg.member.voice.channel.join().then( connection =>{ 
       connection.play('https://www.myinstants.com/media/sounds/florentino_cphRjcL.mp3')
     })
   }
 
   if (msg.content === `${prefix}genesis`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
     msg.member.voice.channel.join().then( connection =>{ 
       connection.play('https://www.myinstants.com/media/sounds/nguoi-nha-que.mp3')
     })
   }
 
   if (msg.content === `${prefix}ping`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
     msg.member.voice.channel.join().then( connection =>{ 
       connection.play('https://www.myinstants.com/media/sounds/discord-notification.mp3')
     })
@@ -512,18 +517,21 @@ client.on("message", msg => {
 
   
   if (msg.content === `${prefix}taiwan`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
     msg.member.voice.channel.join().then( connection =>{ 
       connection.play('https://www.myinstants.com/media/sounds/asian_meme_sound.mp3')
     })
   }
 
   if (msg.content === `${prefix}alert`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
     msg.member.voice.channel.join().then( connection =>{ 
       connection.play('https://www.myinstants.com/media/sounds/999-social-credit-siren.mp3')
     })
   }
 
   if (msg.content === `${prefix}wysi`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
     msg.member.voice.channel.join().then( connection =>{ 
       connection.play('https://www.myinstants.com/media/sounds/wysi.mp3')
     })

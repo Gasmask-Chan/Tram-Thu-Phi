@@ -567,6 +567,7 @@ client.on("message", msg => {
   }
 
   if (msg.content === `${prefix}disconnect`) {
+    if (!msg.member.voice.channel) return
     msg.member.voice.channel.leave()
   }
 

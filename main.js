@@ -82,12 +82,12 @@ client.on("message", msg => {
       if (msg.member.roles.cache.some(role => role.id === "750283340996673559")) return //if the message author has the owner role then return.
       if (msg.member.roles.cache.some(role => role.id == "809610383043592242")) return //if the message author has the admin role then return.
       if (msg.author.bot) return
-      if (msg.channel.id === "884644985524346910") return
+      if (msg.member.roles.cache.some(role => role.id === "896751489358368768")) return
       msg.member.roles.add("896751489358368768") //Add the muted role.
-      msg.reply("Ban da bi gui vao lau dai tinh ai 5 phut")
+      msg.reply("Ban da bi gui vao lau dai tinh ai 30 phut")
       setTimeout(() => {
         msg.member.roles.remove("896751489358368768")
-      }, 300000)
+      }, 1800000)
     }
   }
   function checkden(denlam) {

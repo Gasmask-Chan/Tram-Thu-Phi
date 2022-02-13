@@ -601,6 +601,13 @@ client.on("message", msg => {
     })
   }
 
+  if (msg.content === `${prefix}backycc`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/bac-ky-la-cc-j.mp3')
+    })
+  }
+
   if (msg.content === `${prefix}disconnect`) {
     if (!msg.member.voice.channel) return
     msg.member.voice.channel.leave()

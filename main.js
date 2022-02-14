@@ -307,7 +307,7 @@ client.on("message", msg => {
               inline: false
             },
             {
-              name: "duathoi",
+              name: "~duathoi",
               value: "bo may dua thoi",
               inline: false
             },
@@ -317,7 +317,7 @@ client.on("message", msg => {
               inline: false
             },
             {
-              name: "backycc",
+              name: "~backycc",
               value: "buckylacaiccj",
               inline: false
             }

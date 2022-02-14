@@ -227,6 +227,104 @@ client.on("message", msg => {
         }),
         reactions: {
           '⬅️': "main",
+          '➡️': "sfx",
+        }
+      },
+      {
+        name: "sfx",
+        content: new MessageEmbed({
+          title: "SFX Commands",
+          description: "SFX memes,..",
+          fields: [
+            {
+              name: "~aiosima",
+              value: "Chinese girl laugh",
+              inline: false
+            },
+            {
+              name: "~florentino",
+              value: "qua gk3 gom",
+              inline: false
+            },
+            {
+              name: "~genesis",
+              value: "nguoi nha que",
+              inline: false
+            },
+            {
+              name: "~ping",
+              value: "pong",
+              inline: false
+            },
+            {
+              name: "~wysi",
+              value: "727",
+              inline: false
+            },
+            {
+              name: "~taiwan",
+              value: "-999999 social credits",
+              inline: false
+            },
+            {
+              name: "~alert",
+              value: "ooooooooo",
+              inline: false
+            },
+            {
+              name: "~daika",
+              value: "em chao dai ca a",
+              inline: false
+            },
+            {
+              name: "~chon",
+              value: "nhu cmt tren",
+              inline: false
+            },
+            {
+              name: "~bucac",
+              value: "nhu cmt tren",
+              inline: false
+            },
+            {
+              name: "~cocc",
+              value: "lam sua",
+              inline: false
+            },
+            {
+              name: "~tham",
+              value: "diana",
+              inline: false
+            },
+            {
+              name: "~haianh",
+              value: "ngu",
+              inline: false
+            },
+            {
+              name: "~sua",
+              value: "gau gau",
+              inline: false
+            },
+            {
+              name: "duathoi",
+              value: "bo may dua thoi",
+              inline: false
+            },
+            {
+              name: "~backy",
+              value: "bucky??",
+              inline: false
+            },
+            {
+              name: "backycc",
+              value: "buckylacaiccj",
+              inline: false
+            }
+          ]
+        }),
+        reactions: {
+          '⬅': "funnycommand",
           '➡️': "arcadecommand",
         }
       },
@@ -294,7 +392,7 @@ client.on("message", msg => {
           ]
         }),
         reactions: {
-          '⬅️': "funnycommand",
+          '⬅️': "sfx",
           '➡️': "information",
         }
       },

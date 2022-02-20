@@ -725,6 +725,7 @@ client.on("message", msg => {
 
   if (msg.content.startsWith(`${prefix}play`)) {
     let vdlink = msg.content.slice(6)
+    if (vdlink = ' ') return msg.reply('Please repeat this command again but with videos link!')
     if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
     msg.channel.send(`:musical_note:Now playing your song:musical_note:`)
     msg.member.voice.channel.join().then( connection =>{ 

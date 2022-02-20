@@ -776,17 +776,6 @@ client.on("message", msg => {
   }
 })
 
-client.on("voiceStateUpdate", (oldState, newState) => {
-  let oldUser = oldState.channelID
-  let newUser = newState.channelID
-
-  if (oldUser === null || typeof oldUser == 'undefined') {
-    console.log('kkk');
-    return;
-  }
-  console.log('k');
-})
-
 banchoclient.connect().then(() => {
   console.log("Connected to Bancho.")
   banchoclient.getChannel("#osu").join().then(() => {         

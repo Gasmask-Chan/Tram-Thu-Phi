@@ -222,6 +222,11 @@ client.on("message", msg => {
               name: "~tts <text>",
               value: "text to speech (lower than 200 characters)",
               inline: false
+            },
+            {
+              name: "~play <Youtube link> / ~stop",
+              value: "Play music on Youtube also can't be able to play a playlist at this time / stop & disconnect",
+              inline: false
             }
           ]
         }),
@@ -718,7 +723,19 @@ client.on("message", msg => {
     })
   }
 
-  if (msg.content === `${prefix}disconnect`) {
+  if (msg.content.startsWith(`${prefix}play`)) {
+    let vdlink = msg.content.slice(6)
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
+    msg.channel.send(`:musical_note:Now playing your song:musical_note:`)
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play(ytdl(vdlink, {filter: 'audioonly'}))
+    })
+    
+    console.log(vdlink)
+  }
+  
+
+  if (msg.content === `${prefix}disconnect` || msg.content === `${prefix}stop`) {
     if (!msg.member.voice.channel) return
     msg.member.voice.channel.leave()
   }
@@ -756,6 +773,17 @@ client.on("message", msg => {
     msg.channel.send(`Hello? If you're looking for my prefix then its` + " ```" + `${prefix}` + "```")
     }
   }
+})
+
+client.on("voiceStateUpdate", (oldState, newState) => {
+  let oldUser = oldState.channelID
+  let newUser = newState.channelID
+
+  if (oldUser === null || typeof oldUser == 'undefined') {
+    console.log('kkk');
+    return;
+  }
+  console.log('k');
 })
 
 banchoclient.connect().then(() => {

@@ -330,6 +330,11 @@ client.on("message", msg => {
               name: "~backycc",
               value: "buckylacaiccj",
               inline: false
+            },
+            {
+              name: "~kcg",
+              value: "khong cho tien choi gai",
+              inline: false
             }
           ]
         }),
@@ -723,9 +728,15 @@ client.on("message", msg => {
     })
   }
 
+  if (msg.content === `${prefix}kcg`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/khong-cho-tien-choi-gai.mp3')
+    })
+  }
+
   if (msg.content.startsWith(`${prefix}play`)) {
     let vdlink = msg.content.slice(6)
-    console.log(vdlink)
     if (vdlink.length < 15) return msg.reply('Please repeat this command again but with videos link!')
     if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
     msg.channel.send(`:musical_note:Now playing your song:musical_note:`)

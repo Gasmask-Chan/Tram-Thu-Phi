@@ -424,7 +424,7 @@ client.on("message", msg => {
             },
             {
               name: "NHaiAnh07",
-              value: "https://bit.ly/NHaiAnh07pf", //de cho co thoi chu no co viet con cac gi may dau
+              value: "The helper (maybe)", //de cho co thoi chu no co viet con cac gi may dau
               inline: true
             },
             {
@@ -553,16 +553,18 @@ client.on("message", msg => {
   
   if (msg.content === `${prefix}roll`) {
     var number = Math.floor(Math.random() * 1000) + 1
-    if (number == 727) {
-      msg.reply(`YOU FUCKING ROLLED ${number}!! WHEN YOU FUCKING SEE IT!`)
-    } else {
-      if (number == 666) {
+    switch (number) {
+      case 727:
+        msg.reply(`YOU FUCKING ROLLED ${number}!! WHEN YOU FUCKING SEE IT!`)
+        break;
+      case 666:     
         msg.reply(`You rolled ${number}. Wtf man? :skull:`)
-      } else {
-          msg.reply(`You rolled ${number}.`)
+        break;
+      default:
+        msg.reply(`You rolled ${number}.`)
+        break;
         }
       }
-  }
 
   if (msg.content.includes(`${prefix}hornyrate`)) {
     var n = Math.floor(Math.random() * 100) + 1
@@ -576,9 +578,191 @@ client.on("message", msg => {
     msg.channel.send(`${n}% Ngu`)
   }
 
-  //ngu hai anh
-  if (msg.content === `${prefix}vanmau ruleplayer`){
-    msg.channel.send("Này ông, tôi không biết ông thấy như thế nào, nhưng đối với tôi, nó ngu, cơ mà có vẻ như nó không đáp ứng được tiêu chí là một thông báo giải cho anh em trong server và cả tôi, tôi chắc chắn rằng ông có thể đọc luật. Nhưng không, tôi và cả anh em staff trong server cảm thấy thật buồn khi có ông trong server, chúng tôi bị triggered về những cố gắng ông đã đóng góp để phát triển cơn giận trong tôi và anh em staff, chào ông và thân ái :wave:")
+  if (msg.content === `${prefix}join`) {
+    const voiceChannel = msg.member.voice.channel
+    if (!voiceChannel) return msg.reply('You must to connect the voice channel to use this command!')
+    const audioURL = googleTTS.getAudioUrl('Chào mừng bạn đến với đài tiếng nói của vợ Gasmask được tài trợ bởi akane bướm', {
+      lang: 'vi',
+      slow: false,
+      host: 'https://translate.google.com',
+    })
+    voiceChannel.join().then(connection => {
+      connection.play(audioURL)
+    })
+  }
+  if (msg.content === `${prefix}aiosima`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/chinese-girl-laugh.mp3')
+    })
+  }
+
+  if (msg.content === `${prefix}backy`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/bac-ky.mp3')
+    })
+  }
+
+  if (msg.content === `${prefix}florentino`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/florentino_cphRjcL.mp3')
+    })
+  }
+
+  if (msg.content === `${prefix}genesis`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/nguoi-nha-que.mp3')
+    })
+  }
+
+  if (msg.content === `${prefix}ping`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/discord-notification.mp3')
+    })
+  }
+
+  
+  if (msg.content === `${prefix}taiwan`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/asian_meme_sound.mp3')
+    })
+  }
+
+  if (msg.content === `${prefix}alert`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/999-social-credit-siren.mp3')
+    })
+  }
+
+  if (msg.content === `${prefix}wysi`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/wysi.mp3')
+    })
+  }
+
+
+  if (msg.content === `${prefix}daika`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/dai-ca.mp3')
+    })
+  }
+
+  if (msg.content === `${prefix}chon`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/perfect-laugh.mp3')
+    })
+  }
+
+  if (msg.content === `${prefix}bucac`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/bu-cu.mp3')
+    })
+  }
+
+  if (msg.content === `${prefix}cocc`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/coconcac.mp3')
+    })
+  }
+
+  if (msg.content === `${prefix}tham`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/diana-sieu-tham.mp3')
+    })
+  }
+
+  if (msg.content === `${prefix}haianh`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/ngu-cho-nay.mp3')
+    })
+  }
+
+  if (msg.content === `${prefix}sua`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/bomman-gay_CQBLyhx.mp3')
+    })
+  }
+
+  if (msg.content === `${prefix}dmhaianh`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/dm-haianh.mp3')
+    })
+  }
+
+  if (msg.content === `${prefix}duathoi`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/bo-dua-thoi.mp3')
+    })
+  }
+
+  if (msg.content === `${prefix}backycc`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/bac-ky-la-cc-j.mp3')
+    })
+  }
+
+  if (msg.content === `${prefix}lugowo`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/lugowo.mp3')
+    })
+  }
+
+  if (msg.content === `${prefix}kcg`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/khong-cho-tien-choi-gai.mp3')
+    })
+  }
+
+  if (msg.content.startsWith(`${prefix}play`)) {
+    let vdlink = msg.content.slice(6)
+    if (vdlink.length < 15) return msg.reply('Please repeat this command again but with videos link!')
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
+    msg.channel.send(`:musical_note:Now playing your song:musical_note:`)
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play(ytdl(vdlink, {filter: 'audioonly'}))
+    })
+    
+  }
+  
+
+  if (msg.content === `${prefix}disconnect` || msg.content === `${prefix}stop`) {
+    if (!msg.member.voice.channel) return
+    msg.member.voice.channel.leave()
+  }
+
+  if (msg.content.startsWith(`${prefix}tts`)) {
+    const voiceChannel = msg.member.voice.channel
+    if (!voiceChannel) return msg.reply('You must to connect the voice channel to use this command!')
+    const string = msg.content.slice(4)
+    if (string.length === 0) return msg.reply('Thêm text vào em')
+    if (string.length > 200) return msg.reply('Text dài quá sao nói hết được!')
+    const audioURL = googleTTS.getAudioUrl(string, {
+      lang: 'vi',
+      slow: false,
+      host: 'https://translate.google.com',
+    })
+    voiceChannel.join().then(connection => {
+      connection.play(audioURL)
+    })
   }
 
   if (msg.content === `${prefix}join`) {

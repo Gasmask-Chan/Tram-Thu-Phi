@@ -94,63 +94,6 @@ client.on("message", msg => {
     return msg.content.toLowerCase().includes(denlam) || msg.content.toLowerCase() === "đen"
   }
 
-  if (msg.content === "~coldgreeneyes") {
-    setTimeout(() => {
-    msg.channel.send("Everchanging")
-    },500);
-    setTimeout(() => {   
-      msg.channel.send("The knowing feeling")
-    },2000);
-    setTimeout(() => {
-      msg.channel.send("Could make you fall from the dreamy skies")
-    },4000);
-    setTimeout(() => {
-      msg.channel.send("Suddenly the deepness can get true")
-    },6000);
-    setTimeout(() => {
-      msg.channel.send("Realize I fall along with you")
-    },8000);
-    setTimeout(() => {
-      msg.channel.send("And you're looking into calm green eyes")
-    },10000);
-    setTimeout(() => {
-      msg.channel.send("AWOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
-    },12000);
-  }
-
-  if (msg.content === "~geddan") {
-    setTimeout(() => {
-    msg.channel.send("Get")
-    },500);
-    setTimeout(() => {
-    msg.channel.send("Down")
-    },1000);
-    setTimeout(() => {   
-     msg.channel.send("Yureru mawaru fureru setsunai")
-    },2000);
-    setTimeout(() => {
-    msg.channel.send("Kimochi")
-    },6000);
-    setTimeout(() => {
-      msg.channel.send("Futari de issho ni nemuru winter land")
-    },10000);
-    setTimeout(() => {
-      msg.channel.send("Anata")
-    },15000);
-    setTimeout(() => {
-      msg.channel.send("Dake mitsumete")
-    },17000);
-    setTimeout(() => {
-      msg.channel.send("Watashi dake mitsumete")
-    },19000);
-    setTimeout(() => {
-      msg.channel.send("Asu woooooo")
-    },21000);
-    setTimeout(() => {
-      msg.channel.send("Chikau")
-    },28000);
-  }
-
 })
 
 client.on("message", msg => {
@@ -162,295 +105,362 @@ client.on("message", msg => {
     msg.channel.send("My prefix is " + prefix)
   }
 
-  if (msg.content === `${prefix}help`){
-    let helpMenu = new Menu(msg.channel, msg.author.id, [
-      {
-        name: "main",
-        content: new MessageEmbed({
-          title: "Common Commands Menu",
-          description: "List of normal commands",
-          fields: [
-            {
-              name: "~help",
-              value: "You just used it to show this menu! 🤣",
-              inline: true
-            },
-            {
-              name: "~prefix",
-              value: "Display the Bot's prefix.",
-              inline: false
+  function mmb() {    
+    let msgi = msg.content;
+    if (msg.content.startsWith(`${prefix}`))
+    msgi = msgi.replace(`${prefix}`, ''); 
+      switch (msgi) {
+        case "geddan": 
+            setTimeout(() => {
+            msg.channel.send("Get")
+            },500);
+            setTimeout(() => {
+            msg.channel.send("Down")
+            },1000);
+            setTimeout(() => {   
+             msg.channel.send("Yureru mawaru fureru setsunai")
+            },2000);
+            setTimeout(() => {
+            msg.channel.send("Kimochi")
+            },6000);
+            setTimeout(() => {
+              msg.channel.send("Futari de issho ni nemuru winter land")
+            },10000);
+            setTimeout(() => {
+              msg.channel.send("Anata")
+            },15000);
+            setTimeout(() => {
+              msg.channel.send("Dake mitsumete")
+            },17000);
+            setTimeout(() => {
+              msg.channel.send("Watashi dake mitsumete")
+            },19000);
+            setTimeout(() => {
+              msg.channel.send("Asu woooooo")
+            },21000);
+            setTimeout(() => {
+              msg.channel.send("Chikau")
+            },28000);
+          break;
+         case "coldgreeneyes":
+            setTimeout(() => {
+            msg.channel.send("Everchanging")
+            },500);
+            setTimeout(() => {   
+              msg.channel.send("The knowing feeling")
+            },2000);
+            setTimeout(() => {
+              msg.channel.send("Could make you fall from the dreamy skies")
+            },4000);
+            setTimeout(() => {
+              msg.channel.send("Suddenly the deepness can get true")
+            },6000);
+            setTimeout(() => {
+              msg.channel.send("Realize I fall along with you")
+            },8000);
+            setTimeout(() => {
+              msg.channel.send("And you're looking into calm green eyes")
+            },10000);
+            setTimeout(() => {
+              msg.channel.send("AWOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
+            },12000);
+           break;
+          case 'discordgift':
+            msg.channel.send("https://discordgift.site/pqM7dUWuL8TR9OWF")
+           setTimeout(function () {msg.channel.send("https://cdn.discordapp.com/emojis/880989337913815061.png?v=1")
+           },10000)
+          break;
+          case "help":
+            if (msg.content === `${prefix}help`){
+              let helpMenu = new Menu(msg.channel, msg.author.id, [
+                {
+                  name: "main",
+                  content: new MessageEmbed({
+                    title: "Common Commands Menu",
+                    description: "List of normal commands",
+                    fields: [
+                      {
+                        name: "~help",
+                        value: "You just used it to show this menu! 🤣",
+                        inline: true
+                      },
+                      {
+                        name: "~prefix",
+                        value: "Display the Bot's prefix.",
+                        inline: false
+                      }
+                    ]
+                  }),
+                  reactions: {
+                    '⬅️': "information",
+                    '➡️': "funnycommand",
+                  }
+                },
+                {
+                  name: "funnycommand",
+                  content: new MessageEmbed({
+                    title: "Funny Commands",
+                    description: "List of funny commands",
+                    fields: [
+                      {
+                        name: "~discordgift",
+                        value: "Free 1 Year of Nitro 😱😱😱",
+                        inline: false
+                      },
+                      {
+                        name: "~roll",
+                        value: "Get a random number in range 1 to 1000 (Can you get 727?)",
+                        inline: false
+                      },
+                      {
+                        name: "~hornyrate",
+                        value: "Are you horny?",
+                        inline: false
+                      },
+                      {
+                        name: "~ngurate",
+                        value: "How much % of your stupidity?",
+                        inline: false
+                      },
+                      {
+                        name: "~join / ~disconnect",
+                        value: "Join / Disconnect the voice channel",
+                        inline: false
+                      },
+                      {
+                        name: "~tts <text>",
+                        value: "text to speech (lower than 200 characters)",
+                        inline: false
+                      },
+                      {
+                        name: "~play <Youtube link> / ~stop",
+                        value: "Play music on Youtube also can't be able to play a playlist at this time / stop & disconnect",
+                        inline: false
+                      }
+                    ]
+                  }),
+                  reactions: {
+                    '⬅️': "main",
+                    '➡️': "sfx",
+                  }
+                },
+                {
+                  name: "sfx",
+                  content: new MessageEmbed({
+                    title: "SFX Commands",
+                    description: "SFX memes,..",
+                    fields: [
+                      {
+                        name: "~aiosima",
+                        value: "Chinese girl laugh",
+                        inline: false
+                      },
+                      {
+                        name: "~florentino",
+                        value: "qua gk3 gom",
+                        inline: false
+                      },
+                      {
+                        name: "~genesis",
+                        value: "nguoi nha que",
+                        inline: false
+                      },
+                      {
+                        name: "~ping",
+                        value: "pong",
+                        inline: false
+                      },
+                      {
+                        name: "~wysi",
+                        value: "727",
+                        inline: false
+                      },
+                      {
+                        name: "~taiwan",
+                        value: "-999999 social credits",
+                        inline: false
+                      },
+                      {
+                        name: "~alert",
+                        value: "ooooooooo",
+                        inline: false
+                      },
+                      {
+                        name: "~daika",
+                        value: "em chao dai ca a",
+                        inline: false
+                      },
+                      {
+                        name: "~chon",
+                        value: "nhu cmt tren",
+                        inline: false
+                      },
+                      {
+                        name: "~bucac",
+                        value: "nhu cmt tren",
+                        inline: false
+                      },
+                      {
+                        name: "~cocc",
+                        value: "lam sua",
+                        inline: false
+                      },
+                      {
+                        name: "~tham",
+                        value: "diana",
+                        inline: false
+                      },
+                      {
+                        name: "~haianh",
+                        value: "ngu",
+                        inline: false
+                      },
+                      {
+                        name: "~sua",
+                        value: "gau gau",
+                        inline: false
+                      },
+                      {
+                        name: "~duathoi",
+                        value: "bo may dua thoi",
+                        inline: false
+                      },
+                      {
+                        name: "~lugowo",
+                        value: "lugowo zheng",
+                        inline: false
+                      },
+                      {
+                        name: "~backy",
+                        value: "bucky??",
+                        inline: false
+                      },
+                      {
+                        name: "~backycc",
+                        value: "buckylacaiccj",
+                        inline: false
+                      },
+                      {
+                        name: "~kcg",
+                        value: "khong cho tien choi gai",
+                        inline: false
+                      }
+                    ]
+                  }),
+                  reactions: {
+                    '⬅': "funnycommand",
+                    '➡️': "arcadecommand",
+                  }
+                },
+                {
+                  name: "arcadecommand",
+                  content: new MessageEmbed({
+                    title: "Arcade Commands",
+                    description: "Lets play!!",
+                    fields: [
+                      {
+                        name: "~start yt",
+                        value: "Watching Youtube together.",
+                        inline: false
+                      },
+                      {
+                        name: "~start poker",
+                        value: "Play Poker",
+                        inline: false
+                      },
+                      {
+                       name: "~start chess",
+                       value: "Play Chess",
+                       inline: false 
+                      },
+                      {
+                        name: "~start betrayal",
+                        value: "Play Betrayal.io",
+                        inline: false
+                      },
+                      {
+                        name: "~start fishing",
+                        value: "Catch fish",
+                        inline: true
+                      },
+                      {
+                        name: "~start lettertile",
+                        value: "Play lettertile",
+                        inline: false
+                      },
+                      {
+                        name: "~start wordsnack",
+                        value: "Play wordsnack",
+                        inline: false
+                      },
+                      {
+                        name: "~start doodlecrew",
+                        value: "Play doodlecrew",
+                        inline: false
+                      },
+                      {
+                        name: "~start spellcast",
+                        value: "Play spellcast",
+                        inline: false
+                      },
+                      {
+                        name: "~start awkword",
+                        value: "Play awkword",
+                        inline: false
+                      },
+                      {
+                        name: "~start puttparty",
+                        value: "Play puttparty",
+                        inline: false
+                      }
+                    ]
+                  }),
+                  reactions: {
+                    '⬅️': "sfx",
+                    '➡️': "information",
+                  }
+                },
+                {
+                  name: "information",
+                  content: new MessageEmbed({
+                    title: "Developers",
+                    description: "List of Developers",
+                    fields: [
+                      {
+                        name: "GasmaskChan",
+                        value: "The founder",
+                        inline: false
+                      },
+                      {
+                        name: "NHaiAnh07",
+                        value: "The helper (maybe)", //de cho co thoi chu no co viet con cac gi may dau
+                        inline: true
+                      },
+                      {
+                        name: "Source Code:",
+                        value: "||https://github.com/Gasmask-Chan/Tram-Thu-Phi||",
+                        inline: false
+                      }
+                    ]
+                  }),
+                  reactions: {
+                    '⬅': "arcadecommand",
+                    '➡️': "main",
+                  }
+                }
+              ], 300000)
+              helpMenu.start()
+              helpMenu.on("Pagechange", destination => {
+                destination.content.title = "Hey, " + msg.author.username
+              })
             }
-          ]
-        }),
-        reactions: {
-          '⬅️': "information",
-          '➡️': "funnycommand",
+          default:
+           break;
         }
-      },
-      {
-        name: "funnycommand",
-        content: new MessageEmbed({
-          title: "Funny Commands",
-          description: "List of funny commands",
-          fields: [
-            {
-              name: "~discordgift",
-              value: "Free 1 Year of Nitro 😱😱😱",
-              inline: false
-            },
-            {
-              name: "~roll",
-              value: "Get a random number in range 1 to 1000 (Can you get 727?)",
-              inline: false
-            },
-            {
-              name: "~hornyrate",
-              value: "Are you horny?",
-              inline: false
-            },
-            {
-              name: "~ngurate",
-              value: "How much % of your stupidity?",
-              inline: false
-            },
-            {
-              name: "~join / ~disconnect",
-              value: "Join / Disconnect the voice channel",
-              inline: false
-            },
-            {
-              name: "~tts <text>",
-              value: "text to speech (lower than 200 characters)",
-              inline: false
-            },
-            {
-              name: "~play <Youtube link> / ~stop",
-              value: "Play music on Youtube also can't be able to play a playlist at this time / stop & disconnect",
-              inline: false
-            }
-          ]
-        }),
-        reactions: {
-          '⬅️': "main",
-          '➡️': "sfx",
-        }
-      },
-      {
-        name: "sfx",
-        content: new MessageEmbed({
-          title: "SFX Commands",
-          description: "SFX memes,..",
-          fields: [
-            {
-              name: "~aiosima",
-              value: "Chinese girl laugh",
-              inline: false
-            },
-            {
-              name: "~florentino",
-              value: "qua gk3 gom",
-              inline: false
-            },
-            {
-              name: "~genesis",
-              value: "nguoi nha que",
-              inline: false
-            },
-            {
-              name: "~ping",
-              value: "pong",
-              inline: false
-            },
-            {
-              name: "~wysi",
-              value: "727",
-              inline: false
-            },
-            {
-              name: "~taiwan",
-              value: "-999999 social credits",
-              inline: false
-            },
-            {
-              name: "~alert",
-              value: "ooooooooo",
-              inline: false
-            },
-            {
-              name: "~daika",
-              value: "em chao dai ca a",
-              inline: false
-            },
-            {
-              name: "~chon",
-              value: "nhu cmt tren",
-              inline: false
-            },
-            {
-              name: "~bucac",
-              value: "nhu cmt tren",
-              inline: false
-            },
-            {
-              name: "~cocc",
-              value: "lam sua",
-              inline: false
-            },
-            {
-              name: "~tham",
-              value: "diana",
-              inline: false
-            },
-            {
-              name: "~haianh",
-              value: "ngu",
-              inline: false
-            },
-            {
-              name: "~sua",
-              value: "gau gau",
-              inline: false
-            },
-            {
-              name: "~duathoi",
-              value: "bo may dua thoi",
-              inline: false
-            },
-            {
-              name: "~lugowo",
-              value: "lugowo zheng",
-              inline: false
-            },
-            {
-              name: "~backy",
-              value: "bucky??",
-              inline: false
-            },
-            {
-              name: "~backycc",
-              value: "buckylacaiccj",
-              inline: false
-            },
-            {
-              name: "~kcg",
-              value: "khong cho tien choi gai",
-              inline: false
-            }
-          ]
-        }),
-        reactions: {
-          '⬅': "funnycommand",
-          '➡️': "arcadecommand",
-        }
-      },
-      {
-        name: "arcadecommand",
-        content: new MessageEmbed({
-          title: "Arcade Commands",
-          description: "Lets play!!",
-          fields: [
-            {
-              name: "~start yt",
-              value: "Watching Youtube together.",
-              inline: false
-            },
-            {
-              name: "~start poker",
-              value: "Play Poker",
-              inline: false
-            },
-            {
-             name: "~start chess",
-             value: "Play Chess",
-             inline: false 
-            },
-            {
-              name: "~start betrayal",
-              value: "Play Betrayal.io",
-              inline: false
-            },
-            {
-              name: "~start fishing",
-              value: "Catch fish",
-              inline: true
-            },
-            {
-              name: "~start lettertile",
-              value: "Play lettertile",
-              inline: false
-            },
-            {
-              name: "~start wordsnack",
-              value: "Play wordsnack",
-              inline: false
-            },
-            {
-              name: "~start doodlecrew",
-              value: "Play doodlecrew",
-              inline: false
-            },
-            {
-              name: "~start spellcast",
-              value: "Play spellcast",
-              inline: false
-            },
-            {
-              name: "~start awkword",
-              value: "Play awkword",
-              inline: false
-            },
-            {
-              name: "~start puttparty",
-              value: "Play puttparty",
-              inline: false
-            }
-          ]
-        }),
-        reactions: {
-          '⬅️': "sfx",
-          '➡️': "information",
-        }
-      },
-      {
-        name: "information",
-        content: new MessageEmbed({
-          title: "Developers",
-          description: "List of Developers",
-          fields: [
-            {
-              name: "GasmaskChan",
-              value: "The founder",
-              inline: false
-            },
-            {
-              name: "NHaiAnh07",
-              value: "The helper (maybe)", //de cho co thoi chu no co viet con cac gi may dau
-              inline: true
-            },
-            {
-              name: "Source Code:",
-              value: "||https://github.com/Gasmask-Chan/Tram-Thu-Phi||",
-              inline: false
-            }
-          ]
-        }),
-        reactions: {
-          '⬅': "arcadecommand",
-          '➡️': "main",
-        }
-      }
-    ], 300000)
-    helpMenu.start()
-    helpMenu.on("Pagechange", destination => {
-      destination.content.title = "Hey, " + msg.author.username
-    })
-  }
+    }
+  mmb();
 
-  if (msg.content === `${prefix}discordgift`){
-    msg.channel.send("https://discordgift.site/pqM7dUWuL8TR9OWF")
-   setTimeout(function () {msg.channel.send("https://cdn.discordapp.com/emojis/880989337913815061.png?v=1")
-   },10000)
-  }
+  
 
   if (msg.content === `${prefix}start yt`) {
     if (msg.member.voice.channel) {

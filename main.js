@@ -170,8 +170,28 @@ client.on("message", msg => {
            setTimeout(function () {msg.channel.send("https://cdn.discordapp.com/emojis/880989337913815061.png?v=1")
            },10000)
           break;
+          case "roll":           
+              var number = Math.floor(Math.random() * 1000) + 1
+              switch (number) {
+                case 727:
+                  msg.reply(`YOU FUCKING ROLLED ${number}!! WHEN YOU FUCKING SEE IT!`)
+                  break;
+                case 666:     
+                  msg.reply(`You rolled ${number}. Wtf man? :skull:`)
+                  break;
+                default:
+                  msg.reply(`You rolled ${number}.`)
+                  break;
+                  }
+          case "ngurate":
+              if (msg.author.id === "648504249050857482") { msg.channel.send("May ngu la cai chac roi con hoi?")}
+              if (msg.content.includes("<@!648504249050857482>")) { msg.channel.send("NHaiAnh ngu so 1 Southeast Asia"); return} 
+              var n = Math.floor(Math.random() * 100) + 1
+              msg.channel.send(`${n}% Ngu`)         
+          case "hornyrate":
+              var n = Math.floor(Math.random() * 100) + 1
+              msg.channel.send(`${n}% Horny`)
           case "help":
-            if (msg.content === `${prefix}help`){
               let helpMenu = new Menu(msg.channel, msg.author.id, [
                 {
                   name: "main",
@@ -453,7 +473,6 @@ client.on("message", msg => {
               helpMenu.on("Pagechange", destination => {
                 destination.content.title = "Hey, " + msg.author.username
               })
-            }
           default:
            break;
         }
@@ -559,33 +578,6 @@ client.on("message", msg => {
       })
     }
     else (msg.reply("You must to connect the voice channel to use this command!"))
-  }
-  
-  if (msg.content === `${prefix}roll`) {
-    var number = Math.floor(Math.random() * 1000) + 1
-    switch (number) {
-      case 727:
-        msg.reply(`YOU FUCKING ROLLED ${number}!! WHEN YOU FUCKING SEE IT!`)
-        break;
-      case 666:     
-        msg.reply(`You rolled ${number}. Wtf man? :skull:`)
-        break;
-      default:
-        msg.reply(`You rolled ${number}.`)
-        break;
-        }
-      }
-
-  if (msg.content.includes(`${prefix}hornyrate`)) {
-    var n = Math.floor(Math.random() * 100) + 1
-    msg.channel.send(`${n}% Horny`)
-  }
-
-  if (msg.content.includes(`${prefix}ngurate`)) {
-    if (msg.author.id === "648504249050857482") { msg.channel.send("May ngu la cai chac roi con hoi?")}
-    if (msg.content.includes("<@!648504249050857482>")) { msg.channel.send("NhaiAnh ngu so 1 Southeast Asia"); return} 
-    var n = Math.floor(Math.random() * 100) + 1
-    msg.channel.send(`${n}% Ngu`)
   }
 
   if (msg.content === `${prefix}join`) {

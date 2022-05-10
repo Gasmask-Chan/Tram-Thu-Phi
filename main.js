@@ -22,11 +22,11 @@ const chonkk = ["chon", "chôn", "trôn", "troll"]
 const den = ["nigga", "nigg", "nigger","đen lắm", "den lam"]
 
 client.on("ready", () => {
-  console.log("The bot is ready, LETS GOOOOOOOOOOO!")
+  console.log("The bot is ready.")
 
   client.user.setPresence({
     activity: {
-      name: "Escape From Bac Ky"
+      name: "Escape From Nam Ky :chon:"
     }
   })
   
@@ -183,14 +183,17 @@ client.on("message", msg => {
                   msg.reply(`You rolled ${number}.`)
                   break;
                   }
+              break;
           case "ngurate":
               if (msg.author.id === "648504249050857482") { msg.channel.send("May ngu la cai chac roi con hoi?")}
               if (msg.content.includes("<@!648504249050857482>")) { msg.channel.send("NHaiAnh ngu so 1 Southeast Asia"); return} 
               var n = Math.floor(Math.random() * 100) + 1
-              msg.channel.send(`${n}% Ngu`)         
+              msg.channel.send(`${n}% Ngu`)       
+              break;  
           case "hornyrate":
               var n = Math.floor(Math.random() * 100) + 1
               msg.channel.send(`${n}% Horny`)
+              break;         
           case "help":
               let helpMenu = new Menu(msg.channel, msg.author.id, [
                 {
@@ -473,6 +476,8 @@ client.on("message", msg => {
               helpMenu.on("Pagechange", destination => {
                 destination.content.title = "Hey, " + msg.author.username
               })
+          break;    
+
           default:
            break;
         }
@@ -480,87 +485,88 @@ client.on("message", msg => {
   mmb();
 
   
-
-  if (msg.content === `${prefix}start yt`) {
-    if (msg.member.voice.channel) {
-      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'youtube').then(async invite => {
+function soundeffectndiscordtogether() {
+  let msgi = msg.content;
+  if (msg.content.startsWith(`${prefix}`))
+  msgi = msgi.replace(`${prefix}`, ''); 
+  switch (msgi){
+    case "start poker":
+      if (msg.member.voice.channel) {
+        client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'poker').then(async invite => {
+          return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
+        })
+      }
+      else (msg.reply("You must to connect the voice channel to use this command!"))
+      break;
+    case "start chess":
+      if (msg.member.voice.channel) {
+        client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'chess').then(async invite => {
+          return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
+        })
+      }
+      else (msg.reply("You must to connect the voice channel to use this command!"))
+      break;
+    case "start betrayal":
+      if (msg.member.voice.channel) {
+        client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'betrayal').then(async invite => {
+          return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
+        })
+      }
+      else (msg.reply("You must to connect the voice channel to use this command!"))
+      break;
+    case "start fishing":
+      if (msg.member.voice.channel) {
+        client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'fishing').then(async invite => {
+          return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
+        })
+      }
+      else (msg.reply("You must to connect the voice channel to use this command!"))
+      break;
+    case "start lettertile":
+      if (msg.member.voice.channel) {
+        client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'lettertile').then(async invite => {
+          return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
+        })
+      }
+      else (msg.reply("You must to connect the voice channel to use this command!"))
+      break;
+    case "start wordsnack":
+      if (msg.member.voice.channel) {
+        client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'wordsnack').then(async invite => {
+          return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
+        })
+      }
+      else (msg.reply("You must to connect the voice channel to use this command!"))
+      break;
+    case "start doodlecrew":
+      if (msg.member.voice.channel) {
+        client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'doodlecrew').then(async invite => {
+          return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
+        })
+      }
+      else (msg.reply("You must to connect the voice channel to use this command!"))
+      break;
+    case "spellcast":
+      if (msg.member.voice.channel) {
+        client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'spellcast').then(async invite => {
+          return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
+        })
+      }
+      else (msg.reply("You must to connect the voice channel to use this command!"))
+      break;
+    case "start yt":
+       if (msg.member.voice.channel) {
+       client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'youtube').then(async invite => {
         return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
       })
-    }
-    else (msg.reply("You must to connect the voice channel to use this command!"))
+     }
+        else (msg.reply("You must to connect the voice channel to use this command!"))            
+      break;
+    default:
+      break; 
   }
-
-  if (msg.content === `${prefix}start poker`) {
-    if (msg.member.voice.channel) {
-      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'poker').then(async invite => {
-        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
-      })
-    }
-    else (msg.reply("You must to connect the voice channel to use this command!"))
-  }
-
-  if (msg.content === `${prefix}start chess`) {
-    if (msg.member.voice.channel) {
-      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'chess').then(async invite => {
-        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
-      })
-    }
-    else (msg.reply("You must to connect the voice channel to use this command!"))
-  }
-
-  if (msg.content === `${prefix}start betrayal`) {
-    if (msg.member.voice.channel) {
-      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'betrayal').then(async invite => {
-        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
-      })
-    }
-    else (msg.reply("You must to connect the voice channel to use this command!"))
-  }
-
-  if (msg.content === `${prefix}start fishing`) {
-    if (msg.member.voice.channel) {
-      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'fishing').then(async invite => {
-        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
-      })
-    }
-    else (msg.reply("You must to connect the voice channel to use this command!"))
-  }
-
-  if (msg.content === `${prefix}start lettertile`) {
-    if (msg.member.voice.channel) {
-      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'lettertile').then(async invite => {
-        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
-      })
-    }
-    else (msg.reply("You must to connect the voice channel to use this command!"))
-  }
-
-  if (msg.content === `${prefix}start wordsnack`) {
-    if (msg.member.voice.channel) {
-      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'wordsnack').then(async invite => {
-        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
-      })
-    }
-    else (msg.reply("You must to connect the voice channel to use this command!"))
-  }
-
-  if (msg.content === `${prefix}start doodlecrew`) {
-    if (msg.member.voice.channel) {
-      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'doodlecrew').then(async invite => {
-        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
-      })
-    }
-    else (msg.reply("You must to connect the voice channel to use this command!"))
-  }
-
-  if (msg.content === `${prefix}start spellcast`) {
-    if (msg.member.voice.channel) {
-      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'spellcast').then(async invite => {
-        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
-      })
-    }
-    else (msg.reply("You must to connect the voice channel to use this command!"))
-  }
+}
+soundeffectndiscordtogether();
 
   if (msg.content === `${prefix}start awkword`) {
     if (msg.member.voice.channel) {
@@ -749,22 +755,6 @@ client.on("message", msg => {
   if (msg.content === `${prefix}disconnect` || msg.content === `${prefix}stop`) {
     if (!msg.member.voice.channel) return
     msg.member.voice.channel.leave()
-  }
-
-  if (msg.content.startsWith(`${prefix}tts`)) {
-    const voiceChannel = msg.member.voice.channel
-    if (!voiceChannel) return msg.reply('You must to connect the voice channel to use this command!')
-    const string = msg.content.slice(4)
-    if (string.length === 0) return msg.reply('Thêm text vào em')
-    if (string.length > 200) return msg.reply('Text dài quá sao nói hết được!')
-    const audioURL = googleTTS.getAudioUrl(string, {
-      lang: 'vi',
-      slow: false,
-      host: 'https://translate.google.com',
-    })
-    voiceChannel.join().then(connection => {
-      connection.play(audioURL)
-    })
   }
 
   if (msg.content === `${prefix}join`) {

@@ -562,29 +562,27 @@ function soundeffectndiscordtogether() {
      }
         else (msg.reply("You must to connect the voice channel to use this command!"))            
       break;
+    case "start awkword":
+      if (msg.member.voice.channel) {
+        client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'awkword').then(async invite => {
+          return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
+        })
+      }
+      else (msg.reply("You must to connect the voice channel to use this command!"))
+      break;
+    case "start puttparty":
+      if (msg.member.voice.channel) {
+        client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'puttparty').then(async invite => {
+          return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
+        })
+      }
+      else (msg.reply("You must to connect the voice channel to use this command!"))
+      break;
     default:
       break; 
   }
 }
 soundeffectndiscordtogether();
-
-  if (msg.content === `${prefix}start awkword`) {
-    if (msg.member.voice.channel) {
-      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'awkword').then(async invite => {
-        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
-      })
-    }
-    else (msg.reply("You must to connect the voice channel to use this command!"))
-  }
-
-  if (msg.content === `${prefix}start puttparty`) {
-    if (msg.member.voice.channel) {
-      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'puttparty').then(async invite => {
-        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
-      })
-    }
-    else (msg.reply("You must to connect the voice channel to use this command!"))
-  }
 
   if (msg.content === `${prefix}join`) {
     const voiceChannel = msg.member.voice.channel

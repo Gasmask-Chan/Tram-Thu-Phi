@@ -909,6 +909,13 @@ soundeffectndiscordtogether();
     })
   }
 
+  if (msg.content === `${prefix}holdup`) {
+    if (!msg.member.voice.channel) return msg.reply('You must to connect the voice channel to use this command!')
+    msg.member.voice.channel.join().then( connection =>{ 
+      connection.play('https://www.myinstants.com/media/sounds/dr-mp3cut_Wz8iJ7J.mp3')
+    })
+  }
+
   if (msg.content.startsWith(`${prefix}play`)) {
     let vdlink = msg.content.slice(6)
     if (vdlink.length < 15) return msg.reply('Please repeat this command again but with videos link!')

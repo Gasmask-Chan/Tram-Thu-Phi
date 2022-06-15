@@ -253,98 +253,103 @@ client.on("message", msg => {
                     description: "SFX memes,..",
                     fields: [
                       {
-                        name: "~aiosima",
+                        name: "~sfx aiosima",
                         value: "Chinese girl laugh",
                         inline: false
                       },
                       {
-                        name: "~florentino",
+                        name: "~sfx florentino",
                         value: "qua gk3 gom",
                         inline: false
                       },
                       {
-                        name: "~genesis",
+                        name: "~sfx genesis",
                         value: "nguoi nha que",
                         inline: false
                       },
                       {
-                        name: "~ping",
+                        name: "~sfx ping",
                         value: "pong",
                         inline: false
                       },
                       {
-                        name: "~wysi",
+                        name: "~sfx wysi",
                         value: "727",
                         inline: false
                       },
                       {
-                        name: "~taiwan",
+                        name: "~sfx taiwan",
                         value: "-999999 social credits",
                         inline: false
                       },
                       {
-                        name: "~alert",
+                        name: "~sfx alert",
                         value: "ooooooooo",
                         inline: false
                       },
                       {
-                        name: "~daika",
+                        name: "~sfx daika",
                         value: "em chao dai ca a",
                         inline: false
                       },
                       {
-                        name: "~chon",
+                        name: "~sfx chon",
                         value: "nhu cmt tren",
                         inline: false
                       },
                       {
-                        name: "~bucac",
+                        name: "~sfx bucac",
                         value: "nhu cmt tren",
                         inline: false
                       },
                       {
-                        name: "~cocc",
+                        name: "~sfx cocc",
                         value: "lam sua",
                         inline: false
                       },
                       {
-                        name: "~tham",
+                        name: "~sfx tham",
                         value: "diana",
                         inline: false
                       },
                       {
-                        name: "~haianh",
+                        name: "~sfx haianh",
                         value: "ngu",
                         inline: false
                       },
                       {
-                        name: "~sua",
+                        name: "~sfx sua",
                         value: "gau gau",
                         inline: false
                       },
                       {
-                        name: "~duathoi",
+                        name: "~sfx duathoi",
                         value: "bo may dua thoi",
                         inline: false
                       },
                       {
-                        name: "~lugowo",
+                        name: "~sfx lugowo",
                         value: "lugowo zheng",
                         inline: false
                       },
                       {
-                        name: "~backy",
+                        name: "~sfx backy",
                         value: "bucky??",
                         inline: false
                       },
                       {
-                        name: "~backycc",
+                        name: "~sfx backycc",
                         value: "buckylacaiccj",
                         inline: false
                       },
                       {
-                        name: "~kcg",
+                        name: "~sfx kcg",
                         value: "khong cho tien choi gai",
+                        inline: false
+                      },
+                      {
+                        name: "~sfx holdup",
+                        value: "nhu cmt",
                         inline: false
                       }
                     ]

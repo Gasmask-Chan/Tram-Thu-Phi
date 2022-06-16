@@ -18,6 +18,7 @@ const currentDate = new Date();
 prefix = "~"
 client.discordTogether = new DiscordTogether(client)
 
+const together = require("./commands/togetherActivity.js");
 const sound = require("./commands/soundEffect.js");
 const pepenhi = ["hai anh", "haianh", "nhaianh", "hải anh", "bot"]
 const chonkk = ["chon", "chôn", "trôn", "troll"]
@@ -366,7 +367,7 @@ client.on("message", msg => {
                     description: "Lets play!!",
                     fields: [
                       {
-                        name: "~start yt",
+                        name: "~start youtube",
                         value: "Watching Youtube together.",
                         inline: false
                       },
@@ -419,6 +420,16 @@ client.on("message", msg => {
                         name: "~start puttparty",
                         value: "Play puttparty",
                         inline: false
+                      },
+                      {
+                        name: "~start sketchheads",
+                        value: "Play sketchheads",
+                        inline: false
+                      },
+                      {
+                        name: "~start ocho",
+                        value: "Play ocho",
+                        inline: false
                       }
                     ]
                   }),
@@ -467,107 +478,17 @@ client.on("message", msg => {
     }
   mmb();
 
-  
-
-  if (msg.content === `${prefix}start yt`) {
+  if (msg.content.startsWith(`${prefix}start`)) {
+    var linkcode = msg.content.slice(7);
+    if (together.activity(linkcode) == "xamlon") return msg.channel.send("Please give me a valid name!");
     if (msg.member.voice.channel) {
-      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'youtube').then(async invite => {
+      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, linkcode).then(async invite => {
         return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
       })
     }
-    else (msg.reply("You must to connect the voice channel to use this command!"))
+    else (msg.reply("You must connect to the voice channel to use this command!"))
   }
 
-  if (msg.content === `${prefix}start poker`) {
-    if (msg.member.voice.channel) {
-      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'poker').then(async invite => {
-        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
-      })
-    }
-    else (msg.reply("You must to connect the voice channel to use this command!"))
-  }
-
-  if (msg.content === `${prefix}start chess`) {
-    if (msg.member.voice.channel) {
-      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'chess').then(async invite => {
-        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
-      })
-    }
-    else (msg.reply("You must to connect the voice channel to use this command!"))
-  }
-
-  if (msg.content === `${prefix}start betrayal`) {
-    if (msg.member.voice.channel) {
-      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'betrayal').then(async invite => {
-        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
-      })
-    }
-    else (msg.reply("You must to connect the voice channel to use this command!"))
-  }
-
-  if (msg.content === `${prefix}start fishing`) {
-    if (msg.member.voice.channel) {
-      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'fishing').then(async invite => {
-        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
-      })
-    }
-    else (msg.reply("You must to connect the voice channel to use this command!"))
-  }
-
-  if (msg.content === `${prefix}start lettertile`) {
-    if (msg.member.voice.channel) {
-      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'lettertile').then(async invite => {
-        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
-      })
-    }
-    else (msg.reply("You must to connect the voice channel to use this command!"))
-  }
-
-  if (msg.content === `${prefix}start wordsnack`) {
-    if (msg.member.voice.channel) {
-      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'wordsnack').then(async invite => {
-        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
-      })
-    }
-    else (msg.reply("You must to connect the voice channel to use this command!"))
-  }
-
-  if (msg.content === `${prefix}start doodlecrew`) {
-    if (msg.member.voice.channel) {
-      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'doodlecrew').then(async invite => {
-        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
-      })
-    }
-    else (msg.reply("You must to connect the voice channel to use this command!"))
-  }
-
-  if (msg.content === `${prefix}start spellcast`) {
-    if (msg.member.voice.channel) {
-      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'spellcast').then(async invite => {
-        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
-      })
-    }
-    else (msg.reply("You must to connect the voice channel to use this command!"))
-  }
-
-  if (msg.content === `${prefix}start awkword`) {
-    if (msg.member.voice.channel) {
-      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'awkword').then(async invite => {
-        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
-      })
-    }
-    else (msg.reply("You must to connect the voice channel to use this command!"))
-  }
-
-  if (msg.content === `${prefix}start puttparty`) {
-    if (msg.member.voice.channel) {
-      client.discordTogether.createTogetherCode(msg.member.voice.channel.id, 'puttparty').then(async invite => {
-        return msg.channel.send(`Please CLICK ON THIS LINK to join: ${invite.code}`)
-      })
-    }
-    else (msg.reply("You must to connect the voice channel to use this command!"))
-  }
-  
   if (msg.content === `${prefix}roll`) {
     var number = Math.floor(Math.random() * 1000) + 1
     switch (number) {
@@ -652,6 +573,7 @@ client.on("message", msg => {
       connection.play(audioURL)
     })
   }
+
   if (msg.content.startsWith(`${prefix}sfx`)) {
     var link = msg.content.slice(5);
     link = sound.sfx(link);

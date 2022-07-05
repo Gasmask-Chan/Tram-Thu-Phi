@@ -614,6 +614,7 @@ client.on("message", msg => {
       connection.play(audioURL)
     })
   }
+  
 })
 
 client.on("message", msg => {

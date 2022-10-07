@@ -29,7 +29,7 @@ client.on("ready", () => {
 
   client.user.setPresence({
     activity: {
-      name: "Escape From Bac Ky"
+      name: "#ORZ1M58 #UOCJHOCGD"
     }
   })
   
